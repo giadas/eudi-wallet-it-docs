@@ -207,7 +207,7 @@ In the following, the requirements are grouped based on their category.</p>
 </tr>
 </tbody>
 </table>
-<p>The IT-Wallet specification supports both SD-JWT-VC and mdoc-CBOR Credential formats. The authenticity and integrity of a Credential is checked by verifying the Issuer's signature.</p>
+<p>The IT-Wallet specification supports both SD-JWT VC and mdoc-CBOR Credential formats. The authenticity and integrity of a Credential is checked by verifying the Issuer's signature.</p>
 <ul class="simple">
 <li><p>For SD-JWT, the verification is performed using the algorithm specified in the <strong>alg</strong> header parameter of SD-JWT and a verifiable reference to the public key that must be used for the signature verification. Using OpenID Federation, the verifiable reference to the public cryptographic material is the <strong>kid</strong> header of the SD-JWT, where the cryptographic material is obtained from the Trust Chain about the Credential Issuer, specified in <strong>iss</strong> claim.</p></li>
 <li><p>For mdoc-CBOR, the Issuer's signature is contained in the <em>Mobile Security Object</em> (MSO) and must be validated using the Issuer's public key through a trusted certificate chain contained in the <strong>x5chain</strong> header parameter.</p></li>
@@ -608,8 +608,7 @@ In addition to the Issuer's information, the Digital Credential Type Metadata al
 </tbody>
 </table>
 <p>The Verifier performing the Trust Evaluation about the Issuer of a Credential must not release any information to the Credential Issuer about the Wallet Instance it is interacting with. Using [<a class="reference external" href="https://openid.net/specs/openid-federation-1_0-41.html">OID-FED</a>] the Issuer doesn't know who is the User presenting the Credential.
-In addition, privacy is protected also during the check of the Credential's status. By using Status Assertion [<a class="reference external" href="https://datatracker.ietf.org/doc/draft-demarco-oauth-status-assertions/03/">OAUTH-STATUS-ASSERTION</a>], the IT-Wallet specification ensures
-that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.</p>
+In addition, privacy is protected also during the check of the Credential's status. By using Status List [<a class="reference external" href="https://datatracker.ietf.org/doc/draft-ietf-oauth-status-list/13/">TOKEN-STATUS-LIST</a>], the IT-Wallet specification ensures that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.</p>
 </section>
 <section id="pr-e-70">
 <h3><span class="section-number">15.2.4. </span>PR-E-70<a class="headerlink" href="#pr-e-70" title="Link to this heading">¶</a></h3>
@@ -695,7 +694,7 @@ that while the Verifier checks the Credential's validity, the Issuer does not le
 </tr>
 </tbody>
 </table>
-<p>The Credential lifecycle includes a Credential revocation mechanism based on Status Assertion [<a class="reference external" href="https://datatracker.ietf.org/doc/draft-demarco-oauth-status-assertions/03/">OAUTH-STATUS-ASSERTION</a>] that ensures that Credentials are properly revoked when compromised or outdated.</p>
+<p>The Credential lifecycle includes a Credential revocation mechanism based on Status List [<a class="reference external" href="https://datatracker.ietf.org/doc/draft-ietf-oauth-status-list/13/">TOKEN-STATUS-LIST</a>] that ensures that Credentials are properly revoked when compromised or outdated.</p>
 <p>The revocation of a Federation Entity (i.e., Issuer, Verifier, Wallet Provider) is instead possible by not issuing the corresponding Subordinate Statement about that Entity and set a short expiration of the Trust Chain, thus preventing misuse during compromise.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -797,7 +796,7 @@ OpenID4VCI standard provides the option for the Wallet to request encrypted Cred
 </tr>
 </tbody>
 </table>
-<p>The exchange protocol does not require any interactions between Verifiers and Issuers. In addition, privacy-preserving Status Assertions, presented along with Credentials,
+<p>The exchange protocol does not require any interactions between Verifiers and Issuers. In addition, privacy-preserving Status List mechanism
 ensure that while the Verifier checks the Credential's validity, the Issuer does not learn where or when the Credential is being used.</p>
 </section>
 <section id="spr-w-50">
@@ -904,7 +903,7 @@ ensure that while the Verifier checks the Credential's validity, the Issuer does
 
 
     <div class="footer" role="contentinfo">
-      Last updated on 21/11/2025.
+      Last updated on 12/12/2025.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
     </div>
 
