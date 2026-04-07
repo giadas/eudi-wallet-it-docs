@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Endpoint di Federazione della Relying Party &#8212; IT-Wallet Technical Specifications - Versione Corrente</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <title>Endpoint di Federazione della Relying Party &#8212; IT-Wallet Specifiche Tecniche - Versione Corrente</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
     <link rel="stylesheet" type="text/css" href="_static/itwallet-override.css?v=63798874" />
     <script src="_static/documentation_options.js?v=3fd72285"></script>
@@ -31,7 +31,7 @@
         <p id="toggle_sidebar">
             <a href="#" title="Toggle sidebar">|||</a>
         </p>
-        <h1><a href="index.html" title="Go to homepage">IT-Wallet Technical Specifications - Versione Corrente</a></h1>
+        <h1><a href="index.html" title="Go to homepage">IT-Wallet Specifiche Tecniche - Versione Corrente</a></h1>
             <a id="source_link" href="https://github.com/italia/eudi-wallet-it-docs">
     
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
@@ -135,7 +135,7 @@
 <li class="toctree-l1"><a class="reference internal" href="onboarding-high-level.html">4. Sistema di Onboarding</a></li>
 <li class="toctree-l1"><a class="reference internal" href="functionalities.html">5. Design dell'Esperienza Utente</a></li>
 <li class="toctree-l1"><a class="reference internal" href="trust-infrastructure.html">6. L'Infrastruttura di Trust</a></li>
-<li class="toctree-l1"><a class="reference internal" href="registry.html">7. Infrastruttura di Registro</a></li>
+<li class="toctree-l1"><a class="reference internal" href="registry.html">7. Infrastruttura del Registro</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entity-onboarding.html">8. Onboarding delle Entità</a></li>
 <li class="toctree-l1"><a class="reference internal" href="x5c-evaluation.html">9. Operazioni di Gestione dei Certificati X.509</a></li>
 <li class="toctree-l1"><a class="reference internal" href="entities.html">10. Entità</a></li>
@@ -160,10 +160,10 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>La Relying Party DEVE esporre una serie di endpoint per gestire il ciclo di vita delle App di Verifica che utilizzano un servizio di backend remoto fornito dal loro Backend del Provider di Relying Party. Questi endpoint supportano i flussi di presentazione in prossimità fornendo generazione di nonce, registrazione delle chiavi hardware, convalida dell'integrità e rilascio del Certificato di Accesso. I dettagli specifici della loro implementazione sono lasciati alla discrezione della Relying Party.</p>
+  <span class="target" id="relying-party-provider-backend-endpoint-endpoint-del-backend-del-provider-di-relying-party"></span><p>La Relying Party DEVE esporre una serie di endpoint per gestire il ciclo di vita delle App di Verifica che utilizzano un servizio di backend remoto fornito dal loro Backend del Provider di Relying Party. Questi endpoint supportano i flussi di presentazione in prossimità fornendo generazione di nonce, registrazione delle chiavi hardware, convalida dell'integrità e rilascio del Certificato di Accesso. I dettagli specifici della loro implementazione sono lasciati alla discrezione della Relying Party.</p>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>I test relativi agli endpoint della Relying Party sono definiti nella matrice di test per presentazione remota (<span class="xref std std-ref">test-plans-remote-presentation:Matrice di Test per la Presentazione di Credenziali Remota</span>) e prossimità (<span class="xref std std-ref">test-plans-proximity-presentation:Matrice di Test per la Presentazione di Credenziali in Prossimità</span>).</p>
+<p>I test relativi agli endpoint della Relying Party sono definiti nella matrice di test per presentazione remota (<a class="reference internal" href="test-plans-remote-presentation.html#matrice-di-test-per-il-verificatore-di-credenziali-in-remoto"><span class="std std-ref">Matrice di Test per il Verificatore di Credenziali in Remoto</span></a>) e prossimità (<a class="reference internal" href="test-plans-proximity-presentation.html#matrice-di-test-per-il-verificatore-di-credenziali-in-prossimita"><span class="std std-ref">Matrice di Test per il Verificatore di Credenziali in Prossimità</span></a>).</p>
 </div>
 <section id="endpoint-di-federazione-della-relying-party">
 <h1>Endpoint di Federazione della Relying Party<a class="headerlink" href="#endpoint-di-federazione-della-relying-party" title="Link to this heading">¶</a></h1>
@@ -176,7 +176,7 @@
 </section>
 <section id="endpoint-di-inizializzazione-dell-app-di-verifica-della-relying-party">
 <h1>Endpoint di Inizializzazione dell'App di Verifica della Relying Party<a class="headerlink" href="#endpoint-di-inizializzazione-dell-app-di-verifica-della-relying-party" title="Link to this heading">¶</a></h1>
-<p>L'Endpoint di Inizializzazione dell'App di Verifica consente l'inizializzazione delle App di Verifica, consistente nella registrazione di una coppia di Cryptographic Hardware Keys a lunga durata, memorizzate in modo sicuro (<a class="reference internal" href="test-plans-proximity-presentation.html#test-plans-proximity-presentation"><span class="std std-ref">Matrice di Test per il Verificatore di Credenziali in Prossimità</span></a>).</p>
+<p>L'Endpoint di Inizializzazione dell'App di Verifica consente l'inizializzazione delle App di Verifica, consistente nella registrazione di una coppia di Cryptographic Hardware Keys a lunga durata, memorizzate in modo sicuro (<a class="reference internal" href="test-plans-proximity-presentation.html#matrice-di-test-per-il-verificatore-di-credenziali-in-prossimita"><span class="std std-ref">Matrice di Test per il Verificatore di Credenziali in Prossimità</span></a>).</p>
 <p>Ulteriori dettagli sulla Richiesta e Risposta di Inizializzazione dell'App di Verifica sono forniti rispettivamente nelle Sezioni <a class="reference internal" href="mobile-application-instance.html#richiesta-di-inizializzazione-dell-istanza-dell-applicazione-mobile"><span class="std std-ref">Richiesta di Inizializzazione dell'Istanza dell'Applicazione Mobile</span></a> e <a class="reference internal" href="mobile-application-instance.html#risposta-di-inizializzazione-dell-istanza-dell-applicazione-mobile"><span class="std std-ref">Risposta di Inizializzazione dell'Istanza dell'Applicazione Mobile</span></a>.</p>
 </section>
 <section id="endpoint-di-associazione-chiavi-della-relying-party">
@@ -184,12 +184,11 @@
 <p>Il Key Binding Endpoint della Relying Party consente alle App di Verifica di associare la coppia di chiavi appena creata, che sarà associata a un Certificato di Accesso, all'App di Verifica, basandosi su una dimostrazione di possesso delle Cryptographic Hardware Keys generate durante la fase di <a class="reference internal" href="mobile-application-instance.html#inizializzazione-dell-istanza-dell-applicazione-mobile"><span class="std std-ref">Inizializzazione dell'Istanza dell'Applicazione Mobile</span></a>. Prima di completare il processo, il Backend del Provider di Relying Party deve anche verificare l'integrità dell'App di Verifica.</p>
 <section id="richiesta-di-associazione-chiavi-della-relying-party">
 <h2>Richiesta di Associazione Chiavi della Relying Party<a class="headerlink" href="#richiesta-di-associazione-chiavi-della-relying-party" title="Link to this heading">¶</a></h2>
-<p>Ulteriori dettagli sulla Relying Party Key Binding Request sono forniti nella sezione <a class="reference internal" href="wallet-provider-endpoint.html#richiesta-di-emissione-della-wallet-app-e-wallet-unit-attestation"><span class="std std-ref">Richiesta di Emissione della Wallet App e Wallet Unit Attestation</span></a>.</p>
+<p>Ulteriori dettagli sulla Relying Party Key Binding Request sono forniti nella sezione <a class="reference internal" href="wallet-provider-endpoint.html#richiesta-di-emissione-della-wallet-instance-attestation"><span class="std std-ref">Richiesta di Emissione della Wallet Instance Attestation</span></a>.</p>
 <p>Le uniche differenze sono le seguenti:</p>
 <ul class="simple">
 <li><p>L'intestazione <code class="docutils literal notranslate"><span class="pre">typ</span></code> del JWT della Integrity Request assume il valore <code class="docutils literal notranslate"><span class="pre">rp-kb+jwt</span></code>.</p></li>
-<li><p>Il corpo del JWT della Integrity Request non include la dichiarazione <code class="docutils literal notranslate"><span class="pre">attested_key</span></code>.</p></li>
-<li><p>Il valore della dichiarazione <code class="docutils literal notranslate"><span class="pre">hardware_signature</span></code> viene ottenuto basandosi esclusivamente sul valore di <code class="docutils literal notranslate"><span class="pre">client_data_hash_waa</span></code>.</p></li>
+<li><p>Il valore della dichiarazione <code class="docutils literal notranslate"><span class="pre">hardware_signature</span></code> viene ottenuto basandosi esclusivamente sul valore di <code class="docutils literal notranslate"><span class="pre">client_data_hash</span></code>.</p></li>
 </ul>
 </section>
 <section id="risposta-di-associazione-chiavi-della-relying-party">
@@ -401,8 +400,8 @@
 </table>
 </section>
 </section>
-<section id="endpoint-di-cancellazione-della-relying-party">
-<h1>Endpoint di Cancellazione della Relying Party<a class="headerlink" href="#endpoint-di-cancellazione-della-relying-party" title="Link to this heading">¶</a></h1>
+<section id="endpoint-di-cancellazione-della-relying-party-del-provider-backend">
+<h1>Endpoint di Cancellazione della Relying Party del Provider Backend<a class="headerlink" href="#endpoint-di-cancellazione-della-relying-party-del-provider-backend" title="Link to this heading">¶</a></h1>
 <p>L'Endpoint di Cancellazione consente alle Istanze di Wallet di richiedere la cancellazione degli attributi presentati alla Relying Party, supportando i diritti di privacy dell'utente e la conformità normativa.</p>
 <p>Per i requisiti di implementazione dettagliati, vedere <a class="reference internal" href="relying-party-remote-flow-endpoints.html#endpoint-di-cancellazione-della-relying-party"><span class="std std-ref">Endpoint di Cancellazione della Relying Party</span></a>.</p>
 </section>
@@ -434,7 +433,7 @@
 <li><a class="reference internal" href="#risposta-del-certificato-di-accesso-della-relying-party">Risposta del Certificato di Accesso della Relying Party</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#endpoint-di-cancellazione-della-relying-party">Endpoint di Cancellazione della Relying Party</a></li>
+<li><a class="reference internal" href="#endpoint-di-cancellazione-della-relying-party-del-provider-backend">Endpoint di Cancellazione della Relying Party del Provider Backend</a></li>
 </ul>
 
             </div>
@@ -457,7 +456,7 @@
 
 
     <div class="footer" role="contentinfo">
-      Ultimo aggiornamento 17/12/2025.
+      Ultimo aggiornamento 07/04/2026.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
     </div>
 

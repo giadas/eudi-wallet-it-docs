@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>4. Onboarding System &#8212; IT-Wallet Technical Specifications - Editor&#39;s Copy</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
     <link rel="stylesheet" type="text/css" href="_static/itwallet-override.css?v=63798874" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
@@ -163,14 +163,10 @@
             
   <section id="onboarding-system">
 <h1><span class="section-number">4. </span>Onboarding System<a class="headerlink" href="#onboarding-system" title="Link to this heading">¶</a></h1>
-<p>The IT-Wallet ecosystem operates as a federated trust infrastructure where participants establish trust relationships and maintain compliance with common security standards.</p>
-<p>The onboarding system MUST enable secure Digital Credential operations. At the same time, it MUST accommodate the diverse operational requirements that different participants require.</p>
-<p>Administrative processes for organizational entities are common to all participants and independent of their technical functions within the ecosystem. However, technical registration processes MUST account for distinct operational roles.</p>
-<p>Credential Issuers, Relying Parties, and Wallet Instances (registered indirectly through Wallet Providers) participate directly in Credential issuance and verification operations. These entities require cryptographic trust establishment through federation protocols.</p>
-<p>Authentic Sources provide authoritative data through direct trust relationships with Credential Issuers. They serve a central role in data discovery and availability, requiring specialized data-focused registration procedures.</p>
+<p>The onboarding system registers operational entities (PID Providers, Attestation Providers, Relying Parties, Wallet Providers, and Authentic Sources) so that they can participate in the IT-Wallet ecosystem with clearly defined authorizations and trust relationships.</p>
 <section id="onboarding-system-architecture">
 <h2><span class="section-number">4.1. </span>Onboarding System Architecture<a class="headerlink" href="#onboarding-system-architecture" title="Link to this heading">¶</a></h2>
-<p>The onboarding framework MUST provide specialized onboarding processes that match the operational characteristics and regulatory obligations of different participant types.</p>
+<p>The onboarding service MUST provide specialized onboarding processes that match the operational characteristics and regulatory obligations of different participant types.</p>
 <figure class="align-default" id="id1">
 <p class="plantuml">
 <object data="_images/plantuml-0217c0cfde9c23cc86d4826a3ef3eac72198d034.svg" type="image/svg+xml" style="width:99%">
@@ -188,7 +184,7 @@
 <li><p><strong>Technical Registration</strong>: Following administrative approval, entities complete technical registration through specialized pathways:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li><p><strong>Authentic Sources</strong>: Declare their available claims from the Claims Registry and specify intended domains, purposes and organization type (public or private).</p></li>
+<li><p><strong>Authentic Sources</strong>: Declare their available claims from the Claims Registry and specify intended verification purposes and organization type (public or private).</p></li>
 <li><p><strong>Credential Issuers</strong>: Select Authentic Sources based on required claims, request integration approval (except for regulatory mandates), and register Credential types with automatic catalog publication per Supervisory Body policy.</p></li>
 <li><p><strong>Other Federation Entities</strong> (Relying Parties, Wallet Providers): Undergo federation-based registration for cryptographic trust establishment.</p></li>
 </ol>
@@ -197,7 +193,7 @@
 <li><p><strong>IT-Wallet Registry Integration</strong>:</p>
 <blockquote>
 <div><ol class="loweralpha simple">
-<li><p><strong>Claims Registry and Taxonomy Integration</strong>: Claims Registry provides standardized data definitions for individual Credential attributes, while Taxonomy defines hierarchical classification (domains, purposes) that are then referenced in the Digital Credentials Catalog for specific Credential implementations. All participants leverage these registries for capability declarations and issuance/verification requirements.</p></li>
+<li><p><strong>Claims Registry and Taxonomy Integration</strong>: Claims Registry provides standardized data definitions for individual Credential attributes, while Taxonomy defines hierarchical classification (domains, classes, purposes) that are then referenced in the Digital Credentials Catalog for specific Credential implementations. All participants leverage these registries for capability declarations and issuance/verification requirements.</p></li>
 <li><p><strong>AS Registry Integration</strong>: Authentic Sources registered with their declared claims and capability, enabling CI discovery and coordination.</p></li>
 <li><p><strong>Federation Registry Integration</strong>: Operational entities included for trust validation during Credential operations.</p></li>
 <li><p><strong>Catalog Integration</strong>: Credential types automatically published in <a class="reference internal" href="registry.html#digital-credentials-catalog"><span class="std std-ref">Digital Credentials Catalog</span></a> based on Supervisory Body policies for public discovery eligibility.</p></li>
@@ -221,10 +217,16 @@
 </section>
 <section id="federation-onboarding-process">
 <h2><span class="section-number">4.3. </span>Federation Onboarding Process<a class="headerlink" href="#federation-onboarding-process" title="Link to this heading">¶</a></h2>
-<p>Federation onboarding establishes the trust relationships and compliance frameworks that enable operational entities to participate in secure Credential lifecycle activities.
-Operational entities MUST complete onboarding that includes administrative eligibility verification, technical infrastructure validation, and trust establishment. The onboarding process creates cryptographic trust relationships through certificate issuance, trust chain evaluation, and compliance attestation. These mechanisms enable secure interactions among federation participants and provide the foundation for distributed trust validation across the ecosystem.</p>
-<p>Successfully onboarded entities are included in the Federation Registry, which maintains the authoritative list of trusted federation participants. This registry enables operational trust validation during Credential lifecycle activities.</p>
-<p>Relying Parties MUST verify Digital Credentials with cryptographic assurance, Wallet Providers MUST provide trusted digital wallet services to citizens, and Credential Issuers MUST issue Digital Credentials using authoritative data sources. All operations MUST occur within established trust relationships that assure security and auditability.</p>
+<p>Federation onboarding, including administrative and technical registration processes, establishes the trust relationships and compliance checks that enable all entities (PID Providers, Attestation Providers, Relying Parties, Wallet Providers, and Authentic Sources) to participate in the Credential lifecycle.
+Operational entities (PID Providers, Attestation Providers, Relying Parties, and Wallet Providers) MUST complete onboarding that includes administrative eligibility verification and technical validation. For Wallet Providers, this includes conformity assessment of the Wallet Solution and subsequent Trusted List notification flows.</p>
+<p>For PID Providers, Attestation Providers, and Relying Parties, the federation onboarding process typically includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Entity Registration</strong>: Collection of core data (identification, entitlements, service supply points, and cryptographic public keys and certificates) needed to authorize entities and describe their capabilities.</p></li>
+<li><p><strong>Certificate Issuance</strong>: Issuance of certificates that authenticate entities, reference the registry for entitlement verification, support certificate transparency, and describe registration status for Relying Parties and Credential Issuers.</p></li>
+<li><p><strong>Registry Publication</strong>: Publication of all registered entities in the registry, with an online API (see <a class="reference internal" href="trust-infrastructure.html#trust-infrastructure-and-registry-integration"><span class="std std-ref">Trust Infrastructure and Registry Integration</span></a>) that can be used to verify entity registration, and requested attributes.</p></li>
+</ul>
+</div></blockquote>
 </section>
 <section id="entity-lifecycle-management">
 <h2><span class="section-number">4.4. </span>Entity Lifecycle Management<a class="headerlink" href="#entity-lifecycle-management" title="Link to this heading">¶</a></h2>
@@ -292,7 +294,7 @@ Operational entities MUST complete onboarding that includes administrative eligi
 <li><p><strong>Business continuity assurance:</strong> Entities SHOULD balance between making necessary updates and keeping their obligations to users and regulations. This includes ensuring that the service is as available as possible, handling personal data correctly during changes, and staying compliant with legal requirements even in emergency situations.</p></li>
 </ul>
 </div></blockquote>
-<p>Technical procedures and specific compliance requirements for lifecycle management are detailed in the Section <span class="xref std std-ref">entity-onboarding:Entity Lifecycle Management</span>.</p>
+<p>Technical procedures and specific compliance requirements for lifecycle management are detailed in the Section <a class="reference internal" href="entity-onboarding.html#entity-onboarding"><span class="std std-ref">Entity Onboarding</span></a>.</p>
 </section>
 </section>
 <section id="onboarding-journey-maps">
@@ -332,9 +334,9 @@ Operational entities MUST complete onboarding that includes administrative eligi
 <blockquote>
 <div><ul class="simple">
 <li><p><strong>Claims Declaration</strong>: Selects standardized claims (<code class="docutils literal notranslate"><span class="pre">given_name</span></code>, <code class="docutils literal notranslate"><span class="pre">family_name</span></code>, <code class="docutils literal notranslate"><span class="pre">driving_privileges</span></code>, etc. ) from Claims Registry.</p></li>
-<li><p><strong>Taxonomy Classification</strong>: Domain <code class="docutils literal notranslate"><span class="pre">AUTHORIZATION</span></code>, Purpose <code class="docutils literal notranslate"><span class="pre">DRIVING_LICENSE</span></code>.</p></li>
+<li><p><strong>Taxonomy Classification</strong>: Domain <code class="docutils literal notranslate"><span class="pre">MOBILITY_TRAVEL</span></code>, Purpose <code class="docutils literal notranslate"><span class="pre">DRIVING_RIGHTS</span></code>.</p></li>
 <li><p><strong>Use Case</strong>: Public service - driving authorization verification (eligible for Credential Catalog).</p></li>
-<li><p><strong>Integration</strong>: PDND e-service integration following government standards (see <a class="reference internal" href="e-service-pdnd.html#e-service-pdnd"><span class="std std-ref">e-Service PDND</span></a>).</p></li>
+<li><p><strong>Integration</strong>: e-Service PDNDintegration following government standards (see <a class="reference internal" href="e-service-pdnd.html#e-service-pdnd"><span class="std std-ref">e-Service PDND</span></a>).</p></li>
 <li><p><strong>Catalog Outcome</strong>: mDL becomes publicly discoverable after CI integration.</p></li>
 </ul>
 </div></blockquote>
@@ -348,7 +350,7 @@ Operational entities MUST complete onboarding that includes administrative eligi
 <li><p><strong>Catalog Outcome</strong>: Badge remains private, available only via Credential Offer.</p></li>
 </ul>
 </div></blockquote>
-<p>Critical phases include administrative verification by the Supervisory Body (which involves regulatory compliance checks outside the technical scope) and technical validation. The process concludes with registration in the AS Registry, making the declared claims discoverable by Credential Issuers for integration requests.</p>
+<p>Critical phases include administrative verification by the Supervisory Body (which involves regulatory compliance checks outside the technical scope) and technical validation. The process concludes with registration in the AS Registry, making the declared claims discoverable by Credential Issuers for integration requests. The integration requests can be also send by the Authentic Sources to a specific Credential Issuers.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p><strong>Important dependency</strong>: Declared claims in AS Registry remain unavailable to end users until a Credential Issuer completes registration, integration approval, and technical implementation. Catalog publication depends on Supervisory Body policies for public discovery eligibility.</p>
@@ -356,13 +358,13 @@ Operational entities MUST complete onboarding that includes administrative eligi
 </section>
 <section id="credential-issuer-operator-journey">
 <h3><span class="section-number">4.5.3. </span>Credential Issuer Operator Journey<a class="headerlink" href="#credential-issuer-operator-journey" title="Link to this heading">¶</a></h3>
-<p>Credential Issuer operators start by discovering available Authentic Source entities through the AS Registry and evaluating integration feasibility based on required claims. The registration request specifies which Credential types they intend to issue, select appropriate Authentic Source entities, and demonstrate technical capability to access the required data sources.</p>
+<p>Credential Issuer operators start by discovering available Authentic Source entities through the AS Registry and evaluating integration feasibility based on required claims. The registration request specifies which Credential types they intend to issue, select appropriate Authentic Source entities, and demonstrate technical capability to access the required data sources. Alternatively, the Credential Issuer operators receive directly the integration request by the Authentic Source.</p>
 <p><strong>Example - mDL (Public Scenario)</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>AS Discovery</strong>: Identifies the Authentic Source providing mDL attributes in AS Registry with required driving license claims.</p></li>
+<li><p><strong>AS Discovery</strong> or <strong>AS Integration Request</strong>: Identifies the Authentic Source providing mDL attributes in AS Registry with required driving license claims. Alternatively, Credential Issuer receives the integration request directly by mDL Authentic Source.</p></li>
 <li><p><strong>Integration Request</strong>: Automatic approval due to regulatory mandate.</p></li>
-<li><p><strong>Technical Setup</strong>: PDND e-service integration following government standards (see <a class="reference internal" href="e-service-pdnd.html#e-service-pdnd"><span class="std std-ref">e-Service PDND</span></a>).</p></li>
+<li><p><strong>Technical Setup</strong>: e-Service PDNDintegration following government standards (see <a class="reference internal" href="e-service-pdnd.html#e-service-pdnd"><span class="std std-ref">e-Service PDND</span></a>).</p></li>
 <li><p><strong>Catalog Publication</strong>: mDL automatically published in the Credential Catalog.</p></li>
 <li><p><strong>User Access</strong>: Citizens discover mDL through a public catalog in Wallet.</p></li>
 </ul>
@@ -370,8 +372,8 @@ Operational entities MUST complete onboarding that includes administrative eligi
 <p><strong>Example - CI for Employee Badge (Private Scenario)</strong>:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p><strong>AS Discovery</strong>: Identifies the Authentic Source in AS Registry with employee access claims.</p></li>
-<li><p><strong>Integration Request</strong>: Requires AS approval.</p></li>
+<li><p><strong>AS Discovery</strong> or <strong>AS Integration Request</strong>: Identifies the Authentic Source in AS Registry with employee access claims. Alternatively, Credential Issuer receives the integration request by the Authentic Source.</p></li>
+<li><p><strong>Integration Request</strong>: Requires recipient approval.</p></li>
 <li><p><strong>Technical Setup</strong>: Custom API integration with authentication.</p></li>
 <li><p><strong>Catalog Publication</strong>: Badge excluded from public catalog per supervisory policy.</p></li>
 <li><p><strong>User Access</strong>: Employees receive badges only via direct Credential Offer from company systems.</p></li>
@@ -393,7 +395,7 @@ Operational entities MUST complete onboarding that includes administrative eligi
 <section id="wallet-provider-operator-journey">
 <h3><span class="section-number">4.5.4. </span>Wallet Provider Operator Journey<a class="headerlink" href="#wallet-provider-operator-journey" title="Link to this heading">¶</a></h3>
 <p>Wallet Provider operators follow an independent onboarding path that focuses on application certification and security validation. The process highlights the development and certification of wallet applications that can securely store and manage Digital Credentials for citizens.</p>
-<p>A key technical requirement involves implementing Wallet integrity and authenticity check mechanisms. These checks enable the Wallet to obtain a Wallet App Attestation, which serves as proof of the Wallet's security and compliance status during Credential operations.</p>
+<p>A key technical requirement involves implementing Wallet integrity and authenticity check mechanisms. These checks enable the Wallet to obtain a Wallet Instance Attestation, which serves as proof of the Wallet's security and compliance status during Credential operations.</p>
 <p>The certification process includes security evaluation, covering wallet architecture, data protection mechanisms, and user privacy features. Successfully certified wallet providers are registered in the Federation Registry and can distribute their applications through app stores.</p>
 </section>
 <section id="relying-party-operator-journey">
@@ -406,7 +408,7 @@ Operational entities MUST complete onboarding that includes administrative eligi
 <li><p><strong>Authorization Request</strong>: Driving authorization verification for rental eligibility.</p></li>
 <li><p><strong>Claims Requirements</strong>: <code class="docutils literal notranslate"><span class="pre">given_name</span></code>, <code class="docutils literal notranslate"><span class="pre">family_name</span></code>, <code class="docutils literal notranslate"><span class="pre">driving_privileges</span></code>, etc., from mDL.</p></li>
 <li><p><strong>Use Case Justification</strong>: Legal obligation to verify valid driving license before vehicle rental.</p></li>
-<li><p><strong>Authorization Scope</strong>: Granted access to <code class="docutils literal notranslate"><span class="pre">AUTHORIZATION</span></code> domain, <code class="docutils literal notranslate"><span class="pre">DRIVING_LICENSE</span></code> purpose.</p></li>
+<li><p><strong>Authorization Scope</strong>: Granted access to <code class="docutils literal notranslate"><span class="pre">MOBILITY_TRAVEL</span></code> domain, <code class="docutils literal notranslate"><span class="pre">DRIVING_RIGHTS</span></code> purpose.</p></li>
 </ul>
 </div></blockquote>
 <p><strong>Example - Municipal Services (Public RP)</strong>:</p>
@@ -503,7 +505,7 @@ Operational entities MUST complete onboarding that includes administrative eligi
 
 
     <div class="footer" role="contentinfo">
-      Last updated on 17/12/2025.
+      Last updated on 07/04/2026.
       Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
     </div>
 
