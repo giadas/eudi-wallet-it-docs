@@ -5,131 +5,262 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.1. Endpoint del Fornitore di Wallet &#8212; IT-Wallet Specifiche Tecniche - Versione Corrente</title>
+    <title>13.1. Endpoint del Fornitore di Wallet &#8212; IT-Wallet Specifiche Tecniche</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
-    <link rel="stylesheet" type="text/css" href="_static/itwallet-override.css?v=63798874" />
-    <script src="_static/documentation_options.js?v=53f44254"></script>
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs.css?v=6356115f" />
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs-fonts.css?v=5c444340" />
+    <link rel="stylesheet" type="text/css" href="_static/shared-ui/css/bootstrap-italia.min.css?v=b319c0cd" />
+    <link rel="stylesheet" type="text/css" href="_static/shared-ui/css/ita.min.css?v=db8a8e6d" />
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs-overrides.css?v=b90024cc" />
+
+    <script src="_static/documentation_options.js?v=af8558f3"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=da26b4cc"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
+<script src="_static/shared-ui/js/jquery-3.7.0.min.js"></script>
+<script src="_static/shared-ui/js/ita.min.js"></script>
+<script src="_static/shared-ui/js/bootstrap-italia.bundle.min.js"></script>
+<script src="_static/js/eid-wallet-docs.js"></script>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/15377824?s=48&amp;v=4"/>
     <link rel="index" title="Indice" href="genindex.html" />
     <link rel="search" title="Cerca" href="search.html" />
     <link rel="next" title="13.2. Endpoint del Credential Issuer" href="credential-issuer-endpoint.html" />
-    <link rel="prev" title="13. Endpoints" href="endpoints.html" /> 
-  </head><body data-dark_mode_code_blocks="true">
-
-<div id="top_nav">
-    
-
-    <nav>
-        
-            
-        
-
-        <p id="toggle_sidebar">
-            <a href="#" title="Toggle sidebar">|||</a>
-        </p>
-        <h1><a href="index.html" title="Go to homepage">IT-Wallet Specifiche Tecniche - Versione Corrente</a></h1>
-            <a id="source_link" href="https://github.com/italia/eudi-wallet-it-docs">
-    
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-            <path fill="white" d="M 244.8,8 C 106.1,8 0,113.3 0,252 c 0,110.9 69.8,205.8 169.5,239.2 12.8,2.3 17.3,-5.6 17.3,-12.1 0,-6.2 -0.3,-40.4 -0.3,-61.4 0,0 -70,15 -84.7,-29.8 0,0 -11.4,-29.1 -27.8,-36.6 0,0 -22.9,-15.7 1.6,-15.4 0,0 24.9,2 38.6,25.8 21.9,38.6 58.6,27.5 72.9,20.9 2.3,-16 8.8,-27.1 16,-33.7 -55.9,-6.2 -112.3,-14.3 -112.3,-110.5 0,-27.5 7.6,-41.3 23.6,-58.9 -2.6,-6.5 -11.1,-33.3 2.6,-67.9 20.9,-6.5 69,27 69,27 20,-5.6 41.5,-8.5 62.8,-8.5 21.3,0 42.8,2.9 62.8,8.5 0,0 48.1,-33.6 69,-27 13.7,34.7 5.2,61.4 2.6,67.9 16,17.7 25.8,31.5 25.8,58.9 0,96.5 -58.9,104.2 -114.8,110.5 9.2,7.9 17,22.9 17,46.4 0,33.7 -0.3,75.4 -0.3,83.6 0,6.5 4.6,14.4 17.3,12.1 C 428.2,457.8 496,362.9 496,252 496,113.3 383.5,8 244.8,8 Z"/>
-        </svg>
-    
-</a>
-        
-
-        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
-    <template v-if="mode == 'light'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'dark'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'darkest'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-</a>
-
-<script>
-(function() {
-    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
-
-    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
-
-    if (initialMode) {
-        // Make sure the value in local storage is valid
-        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
-            initialMode = 'light'
-            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    <link rel="prev" title="13. Endpoints" href="endpoints.html" />
+   
+  <meta name="description" content="IT-Wallet Specifiche Tecniche">
+  <script>
+    (function () {
+      try {
+        var mode = localStorage.getItem("it-docs-brightness");
+        if (mode && /^(light|middle|black)$/.test(mode)) {
+          document.documentElement.setAttribute("data-it-docs-brightness", mode);
         }
-    } else {
-        // Check if the client prefers dark mode
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            initialMode = 'dark'
-        } else {
-            initialMode = 'light'
-        }
-        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
-    }
+      } catch (error) {
+        /* ignore storage errors */
+      }
+    })();
+  </script>
+  </head><body class="it-docs-body">
+<nav class="it-skip-links" aria-label="Skip links">
+  <a id="skip-main" class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
+  <a id="skip-footer" class="visually-hidden-focusable" href="#page-footer">Skip to footer</a>
+</nav>
 
-    document.documentElement.dataset.mode = initialMode
-
-    PetiteVue.createApp({
-        'mode': initialMode,
-        handleClick() {
-            let currentMode = this.mode
-
-            if (currentMode == 'light') {
-                this.mode = 'dark'
-            } else if (currentMode == 'dark') {
-                this.mode = 'darkest'
-            } else if (currentMode == 'darkest') {
-                this.mode = 'light'
-            }
-
-            document.documentElement.dataset.mode = this.mode
-            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
-
-            console.log(this.mode)
-        }
-    }).mount('#mode_toggle')
-})()
-</script>
-            <p class="mobile_search_link">
-                <a href="search.html" title="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
-                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
-                    </svg>
-                </a>
-            </p>
-        
-
-        <div class="searchbox_wrapper">
-            
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Ricerca veloce</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Vai" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<header class="it-header-wrapper it-docs-header" role="banner">
+  <div class="it-header-slim-wrapper bg-primary">
+    <div class="container">
+      <div class="it-header-slim-wrapper-content d-flex justify-content-between align-items-center">
+        <span class="navbar-brand text-white" id="header-region-name">
+          <strong>Dipartimento per la Trasformazione Digitale</strong>
+        </span>
+        <div class="it-header-slim-right-zone it-docs-slim-tools d-flex align-items-center"><div class="it-docs-searchbox--slim it-docs-searchbox" role="search">
+  <form class="it-docs-search-form" action="search.html" method="get">
+    <label class="visually-hidden" for="it-docs-search-input">Cerca</label>
+    <input id="it-docs-search-input"
+           class="form-control it-docs-search-input"
+           type="search"
+           name="q"
+           placeholder="Cerca"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"
+           enterkeyhint="search"/>
+    <button class="btn it-docs-search-submit" type="submit" title="Cerca">
+      <svg class="icon it-docs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M21.9 21.1 16 15.3c1.3-1.5 2-3.4 2-5.3 0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8c1.9 0 3.8-.7 5.3-2l5.8 5.9.8-.8zM10 17c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+</svg>
+      <span class="visually-hidden">Cerca</span>
+    </button>
+  </form>
+</div><a id="source_link" class="it-docs-source-link" href="https://github.com/italia/eudi-wallet-it-docs" title="Source repository" target="_blank" rel="noopener">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.4-2.1.7-2.1-1.3-4.3-4.3-5.2-2.6-.7-5.5.3-6.4 2.1zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5 21.3 0 42.8 2.9 62.8 8.5 0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/>
+  </svg>
+  
+  <span class="visually-hidden">Source repository</span>
+</a><div class="nav-item dropdown it-docs-brightness-dropdown">
+  <button type="button"
+          id="it-docs-brightness-toggle"
+          class="it-docs-brightness-toggle nav-link dropdown-toggle"
+          aria-controls="it-docs-brightness-menu"
+          data-bs-toggle="dropdown"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          title="Content brightness">
+    <span id="it-docs-brightness-active-hint" class="visually-hidden">
+      Active brightness:
+    </span>
+    <svg class="icon it-docs-brightness-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M12 7.75a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zM10.5 1.25h3v4.75h-3V1.25zm0 17h3v4.75h-3V18.25zM1.25 10.5h4.75v3h-4.75v-3zm17 0h4.75v3H18.25v-3zM5.1 5.1h3.2v3.2H5.1V5.1zm10.7 0h3.2v3.2h-3.2V5.1zM5.1 15.7h3.2v3.2H5.1v-3.2zm10.7 0h3.2v3.2h-3.2v-3.2z"/>
+</svg>
+    <span class="visually-hidden" id="it-docs-brightness-current-label">Light</span>
+    <svg class="icon ms-1 it-docs-brightness-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+  </button>
+  <div id="it-docs-brightness-menu" class="dropdown-menu dropdown-menu-end">
+    <div class="row">
+      <div class="col-12">
+        <div class="link-list-wrapper">
+          <ul class="link-list" role="menu" aria-labelledby="it-docs-brightness-toggle">
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option active"
+                      data-it-docs-brightness="light"
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span>Light</span>
+              </button>
+            </li>
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option"
+                      data-it-docs-brightness="middle"
+                      role="menuitemradio"
+                      aria-checked="false">
+                <span>Middle</span>
+              </button>
+            </li>
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option"
+                      data-it-docs-brightness="black"
+                      role="menuitemradio"
+                      aria-checked="false">
+                <span>Black</span>
+              </button>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
 </div>
-
-    
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper"><p class="caption" role="heading"><span class="caption-text">Indice dei Contenuti</span></p>
+          <div class="nav-item dropdown it-header-lang-dropdown">
+            <button type="button"
+                    id="languagesDropButton"
+                    class="nav-link dropdown-toggle"
+                    aria-controls="language-menu"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="menu"
+                    aria-expanded="false">
+              <span id="header-lang-active-hint" class="visually-hidden">lingua attiva:</span>
+              <span class="it-header-lang-label" aria-hidden="true">ITA</span>
+              <svg class="icon icon-sm ms-1 it-header-lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+            </button>
+            <div id="language-menu" class="dropdown-menu dropdown-menu-end">
+              <div class="row">
+                <div class="col-12">
+                  <div class="link-list-wrapper">
+                    <ul class="link-list" role="menu" aria-labelledby="languagesDropButton">
+                      <li>
+                        <a class="dropdown-item list-item it-lang-option active"
+                           href="#"
+                           data-lang="it"
+                           role="menuitemradio"
+                           aria-checked="true"
+                           aria-current="true">
+                          <span lang="it">Italiano</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item list-item it-lang-option"
+                           href="../en/wallet-provider-endpoint.html"
+                           data-lang="en"
+                           role="menuitemradio"
+                           aria-checked="false"
+                           >
+                          <span lang="en">English</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="it-header-center-content-wrapper it-docs-header-compact">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-center-content d-flex align-items-center justify-content-between flex-nowrap">
+            <div class="it-brand-wrapper it-docs-brand-wrapper">
+              <a href="index.html"
+                 class="it-docs-brand-link text-decoration-none"
+                 title="Home">
+                <h2 class="it-brand-title it-docs-header-site-title" id="header-site-title">IT-Wallet Specifiche Tecniche</h2>
+              </a>
+            </div>
+            <button class="custom-navbar-toggler d-lg-none it-docs-sidebar-toggler"
+                    type="button"
+                    data-it-docs-nav-toggle
+                    data-it-docs-nav-target="#itDocsPrimaryNav"
+                    aria-controls="itDocsPrimaryNav"
+                    aria-expanded="false"
+                    aria-label="Open navigation">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M22 5v1H2V5h20zM2 12.5h20v-1H2v1zM2 19h20v-1H2v1z"/>
+</svg>
+              <span>Menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container it-docs-header-mobile-tools-container d-lg-none">
+      <div class="it-docs-header-mobile-tools"><div class="it-docs-searchbox--mobile it-docs-searchbox" role="search">
+  <form class="it-docs-search-form" action="search.html" method="get">
+    <label class="visually-hidden" for="it-docs-search-input-mobile">Cerca</label>
+    <input id="it-docs-search-input-mobile"
+           class="form-control it-docs-search-input"
+           type="search"
+           name="q"
+           placeholder="Cerca"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"
+           enterkeyhint="search"/>
+    <button class="btn it-docs-search-submit" type="submit" title="Cerca">
+      <svg class="icon it-docs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M21.9 21.1 16 15.3c1.3-1.5 2-3.4 2-5.3 0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8c1.9 0 3.8-.7 5.3-2l5.8 5.9.8-.8zM10 17c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+</svg>
+      <span class="visually-hidden">Cerca</span>
+    </button>
+  </form>
+</div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="it-docs-layout">
+  <div class="it-docs-container">
+    <div class="row it-docs-row">
+      <aside class="col-12 col-lg-3 it-docs-sidebar-col" aria-label="Primary navigation">
+        <div class="navbar-collapsable it-docs-primary-nav-collapsable" id="itDocsPrimaryNav">
+          <div class="overlay d-lg-none"></div>
+          <div class="close-div d-lg-none">
+            <button class="btn close-menu" type="button" aria-label="Close navigation">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m12.7 12 3.7 3.6-.8.8-3.6-3.7-3.6 3.7-.8-.8 3.7-3.6-3.7-3.6.8-.8 3.6 3.7 3.6-3.7.8.8-3.7 3.6z"/>
+</svg>
+            </button>
+          </div>
+          <div class="menu-wrapper it-docs-menu-scroll"><div class="sidebar-wrapper it-line-right-side it-docs-primary-nav">
+  <div class="sidebar-linklist-wrapper">
+    <div class="link-list-wrapper">
+      <h2 class="it-docs-nav-section-label">Indice dei contenuti</h2>
+      
+      <div class="it-docs-sphinx-toc">
+        <p class="caption" role="heading"><span class="caption-text">Indice dei Contenuti</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduzione</a></li>
 <li class="toctree-l1"><a class="reference internal" href="brand-identity.html">2. Brand Identity</a></li>
@@ -160,14 +291,22 @@
 <li class="toctree-l1"><a class="reference internal" href="appendix.html">20. Appendice</a></li>
 </ul>
 
-        </div>
       </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      </aside>
 
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+      <div class="col-12 col-lg-6 it-docs-main-col">
+        <main id="main-content" class="it-docs-main it-page-sections-container" role="main" tabindex="-1">
+          <noscript>
+            <p class="it-docs-noscript alert alert-warning" role="alert">
+              JavaScript is required for navigation menus and some interactive features.
+            </p>
+          </noscript>
+          <div class="body">
             
   <section id="endpoint-del-fornitore-di-wallet">
 <h1><span class="section-number">13.1. </span>Endpoint del Fornitore di Wallet<a class="headerlink" href="#endpoint-del-fornitore-di-wallet" title="Link to this heading">¶</a></h1>
@@ -175,7 +314,7 @@
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
 <p>I test relativi all'uso degli endpoint del Wallet Provider sono definiti in
-<a class="reference internal" href="test-plans-wallet-provider.html#wallet-provider-test-matrix"><span class="std std-ref">Matrice di Test per Wallet Provider</span></a>, in particolare in
+<a class="reference internal" href="test-plans-wallet-provider.html#matrice-di-test-per-wallet-provider"><span class="std std-ref">Matrice di Test per Wallet Provider</span></a>, in particolare in
 <a class="reference internal" href="test-plans-wallet-provider.html#wallet-provider-backend-testcases"><span class="std std-ref">Casi di Test per Backend del Fornitore del Wallet</span></a>,
 <a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-testcases"><span class="std std-ref">Casi di Test per Istanza del Wallet</span></a> e
 <a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-optional-testcases"><span class="std std-ref">Casi di Test Opzionali per Istanza del Wallet</span></a>.</p>
@@ -364,7 +503,7 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 
 <span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;assertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJpc3MiOiJodHRwczovL3dhbGxldC1wcm92aWRlc...&quot;</span>
+<span class="w">  </span><span class="nt">&quot;assertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJpc3MiOiJPbnNpYW5kcklqcDdJbU55ZGlJNklsQ...&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -383,7 +522,7 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>alg</strong></p></td>
-<td><p>Identificatore dell'algoritmo di firma digitale, come definito nel registro IANA &quot;JSON Web Signature and Encryption Algorithms&quot;. DEVE essere uno degli algoritmi supportati elencati in <a class="reference internal" href="algorithms.html#algorithms-cryptographic-algorithms"><span class="std std-ref">Algoritmi Crittografici</span></a> e non DEVE essere impostato su <code class="docutils literal notranslate"><span class="pre">none</span></code> né su alcun identificatore di algoritmo simmetrico (MAC).</p></td>
+<td><p>Identificatore dell'algoritmo di firma digitale, come definito nel registro IANA &quot;JSON Web Signature and Encryption Algorithms&quot;. DEVE essere uno degli algoritmi supportati elencati in <a class="reference internal" href="algorithms.html#algoritmi-crittografici"><span class="std std-ref">Algoritmi Crittografici</span></a> e non DEVE essere impostato su <code class="docutils literal notranslate"><span class="pre">none</span></code> né su alcun identificatore di algoritmo simmetrico (MAC).</p></td>
 <td><p>[<span class="target" id="index-2"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7516.html#section-4.1.1"><strong>RFC 7516#section-4.1.1</strong></a>]</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>kid</strong></p></td>
@@ -411,7 +550,7 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>iss</strong></p></td>
-<td><p>L'identificatore del Fornitore di Wallet concatenato con l'impronta digitale (thumbprint) della JWK nella dichiarazione <code class="docutils literal notranslate"><span class="pre">cnf</span></code>.</p></td>
+<td><p>Stringa contenente l'identificativo univoco della Wallet Instance.</p></td>
 <td><p>[<span class="target" id="index-4"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a>], [<span class="target" id="index-5"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>].</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>exp</strong></p></td>
@@ -465,12 +604,11 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wallet-provider.example.org/instance/OnsiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiL&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OnsiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiL&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;nonce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f3b29a81-45c7-4d12-b8b5-e1f6c9327aef&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;hardware_signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;KoZIhvcNAQcCoIAwgAIB...&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;integrity_assertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;o2NmbXRvYXBwbGUtYXBwYXNzZXJ0aW9uLXBheWxvYWQtYXBw...&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;attested_key&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;o2CFbXRvYXBwbGUtYXBwYXNzTYU0aW9uLXBheWxvYWQtZvRM...&quot;</span>
-<span class="w">  </span><span class="nt">&quot;hardware_key_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;QW12DylRTmF89iGkpydNDWW7m8bVpa2Fn9KBeXGYtfX&quot;</span>
+<span class="w">  </span><span class="nt">&quot;hardware_key_tag&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;QW12DylRTmF89iGkpydNDWW7m8bVpa2Fn9KBeXGYtfX&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;cnf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;jwk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;crv&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;P-256&quot;</span><span class="p">,</span>
@@ -577,7 +715,7 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 <td><p><code class="docutils literal notranslate"><span class="pre">not_found</span></code></p></td>
 <td><p>L'istanza del Wallet non è stata trovata.</p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">422</span> <span class="pre">Unprocessable</span> <span class="pre">Content</span></code> [OPTIONAL]</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">422</span> <span class="pre">Unprocessable</span> <span class="pre">Content</span></code> [OPZIONALE]</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">validation_error</span></code></p></td>
 <td><p>La richiesta non rispetta il formato richiesto.</p></td>
 </tr>
@@ -645,55 +783,36 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>iss</strong></p></td>
-<td><p>OBBLIGATORIO. Identificatore del Fornitore di Wallet.</p></td>
-<td><p><span class="target" id="index-15"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-16"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
+<td><p>OBBLIGATORIO. Stringa contenente l'URL che identifica il Fornitore di Wallet.</p></td>
+<td><p><span class="target" id="index-15"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>exp</strong></p></td>
-<td><p>OBBLIGATORIO. Timestamp UNIX con il tempo di scadenza del JWT.</p></td>
-<td><p><span class="target" id="index-17"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-18"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
+<tr class="row-odd"><td><p><strong>sub</strong></p></td>
+<td><p>OBBLIGATORIO. JWK Thumbprint della chiave pubblica inclusa nel claim <code class="docutils literal notranslate"><span class="pre">cnf</span></code>.</p></td>
+<td><p><span class="target" id="index-16"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a> e <a class="reference external" href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#231-general_info">EUDI-TS 3</a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>iat</strong></p></td>
 <td><p>OBBLIGATORIO. Timestamp UNIX con il tempo di emissione del JWT.</p></td>
-<td><p><span class="target" id="index-19"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-20"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
+<td><p><span class="target" id="index-17"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-18"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>nbf</strong></p></td>
+<tr class="row-odd"><td><p><strong>exp</strong></p></td>
+<td><p>OBBLIGATORIO. Timestamp UNIX con il tempo di scadenza del JWT. Questo dovrebbe essere impostato a un massimo di 24 ore.</p></td>
+<td><p><span class="target" id="index-19"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-20"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a> e <a class="reference external" href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#231-general_info">EUDI-TS 3</a>.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>nbf</strong></p></td>
 <td><p>OPZIONALE. Timestamp UNIX con data e orario prima del quale il JWT NON DEVE essere accettato.</p></td>
 <td><p><span class="target" id="index-21"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-22"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>cnf</strong></p></td>
+<tr class="row-odd"><td><p><strong>cnf</strong></p></td>
 <td><p>OBBLIGATORIO. Oggetto JSON, contenente la parte pubblica di una coppia di chiavi asimmetriche posseduta dall'Istanza di Wallet.</p></td>
 <td><p><span class="target" id="index-23"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7800.html"><strong>RFC 7800</strong></a>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>wallet_link</strong></p></td>
+<tr class="row-even"><td><p><strong>wallet_link</strong></p></td>
 <td><p>OBBLIGATORIO. Stringa contenente un URL per ottenere ulteriori informazioni sul Wallet e sul Fornitore di Wallet.</p></td>
 <td><p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>wallet_name</strong></p></td>
+<tr class="row-odd"><td><p><strong>wallet_name</strong></p></td>
 <td><p>OBBLIGATORIO. Stringa contenente un nome leggibile dall'uomo del Wallet.</p></td>
 <td><p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>status</strong></p></td>
-<td><p>OBBLIGATORIO. Stringa contenente le informazioni su come leggere lo stato della Wallet App Attestation come definito nella Sezione 6.2 di <a class="reference external" href="https://datatracker.ietf.org/doc/draft-ietf-oauth-status-list/13/">TOKEN-STATUS-LIST</a>.</p></td>
-<td><p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>eudi_wallet_info</strong></p></td>
-<td><p>OPTIONAL. Oggetto JSON contenente le informazioni generali sul Wallet e sul Wallet Provider. Il seguente parametro DEVE essere incluso:</p>
-<ul class="simple">
-<li><p><strong>general_info</strong>: OBBLIGATORIO. Un oggetto che contiene i seguenti parametri:</p>
-<ul>
-<li><p><strong>wallet_provider_name</strong>: OBBLIGATORIO. Valore stringa del nome del Wallet Provider come riportato nella lista fidata dei Wallet Provider.</p></li>
-<li><p><strong>wallet_solution_id</strong>: OBBLIGATORIO. Valore stringa dell'identificatore della Wallet Solution come riportato nella lista fidata dei Wallet Provider.</p></li>
-<li><p><strong>wallet_solution_version</strong>: OBBLIGATORIO. Valore stringa della versione della Wallet Solution.</p></li>
-<li><p><strong>wallet_solution_certification_information</strong>: OBBLIGATORIO. Valore stringa che contiene un URL che rimanda alla certificazione della Wallet Solution.</p></li>
-</ul>
-</li>
-</ul>
-</td>
-<td><p><a class="reference external" href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#231-general_info">EUDI-TS 3</a>.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>sub</strong></p></td>
-<td><p>OBBLIGATORIO. Identificatore dell'Istanza di Wallet che è l'impronta digitale della JWK della Wallet Instance Attestation.</p></td>
-<td><p><span class="target" id="index-24"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-25"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -714,22 +833,17 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 <span class="w">    </span><span class="nt">&quot;cnf&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;jwk&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;kty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EC&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;crv&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;P-256&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8g9qKk3tRCBHsu57pNy3oMPc-jeJW8zU1LvfG9H5__M&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;KD0MNCPtJqUd1RGiTdAxEL6OCw5trfzqSrU6BHKOy2g&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;crv&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;P-256&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;kid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dd762e6f8b613193&quot;</span>
-<span class="w">      </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;eudi_wallet_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">      </span><span class="nt">&quot;general_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;wallet_provider_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ExampleOrg&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;wallet_solution_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wallet-mobile&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;wallet_solution_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nt">&quot;wallet_solution_certification_information&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<span class="w">        </span><span class="nt">&quot;kid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dd762e6f8b613193&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ES256&quot;</span>
 <span class="w">      </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
 <span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wallet-provider.example.org&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vbeXJksM45xphtANnCiG6mCyuU4jfGNzopGuKvogg9c&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;sub&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;dd762e6f8b613193&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;wallet_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ExampleOrg&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;wallet_link&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://example.org/wallets/ExampleOrg/info&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772444318</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1772447918</span>
 <span class="w">  </span><span class="p">}</span>
@@ -737,30 +851,30 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Poiché lo schema di certificazione non è ancora stato definito, il contenuto esatto di <code class="docutils literal notranslate"><span class="pre">wallet_solution_certification_information</span></code> è indefinito. Questo contenuto sarà definito in un aggiornamento futuro.</p>
+<p>Come meccanismo di revoca per la WIA, è preferita l'opzione di riutilizzo per emittente descritta nella Sezione 2.5.1 di <a class="reference external" href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#231-general_info">EUDI-TS 3</a>.</p>
 </div>
 </section>
 </section>
-<section id="endpoint-di-emissione-della-wallet-unit-attestation">
-<h2><span class="section-number">13.1.5. </span>Endpoint di Emissione della Wallet Unit Attestation<a class="headerlink" href="#endpoint-di-emissione-della-wallet-unit-attestation" title="Link to this heading">¶</a></h2>
-<p>Questo è un endpoint API RESTful fornito dal Wallet Provider che consente alla Wallet Instance di ottenere una Wallet Unit Attestation, inviando una Richiesta di Emissione della Wallet Unit Attestation.</p>
-<section id="richiesta-di-emissione-della-wallet-unit-attestation">
-<h3><span class="section-number">13.1.5.1. </span>Richiesta di Emissione della Wallet Unit Attestation<a class="headerlink" href="#richiesta-di-emissione-della-wallet-unit-attestation" title="Link to this heading">¶</a></h3>
-<p>La  richiesta di emissione della Wallet Unit Attestation utilizza il metodo HTTP POST con <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> impostato a <code class="docutils literal notranslate"><span class="pre">application/json</span></code>. (<a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-testcases"><span class="std std-ref">WP_026</span></a> e <a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-optional-testcases"><span class="std std-ref">WP_140–142</span></a>).</p>
-<p>L'header <code class="docutils literal notranslate"><span class="pre">typ</span></code> del JWT della richiesta di emissione Wallet Unit Attestation Issuance assume il valore <code class="docutils literal notranslate"><span class="pre">wua-request+jwt</span></code>.</p>
-<p>Il body della richiesta di emissione Wallet Unit Attestation contiene un parametro <code class="docutils literal notranslate"><span class="pre">assertion</span></code> il cui valore è un JWT firmato che include tutti i parametri di header e i claim del body descritti di seguito.</p>
-<p>Di seguito è riportato un esempio non normativo di una Wallet Unit Attestation Request.</p>
-<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/wallet-unit-attestation</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<section id="endpoint-di-emissione-della-key-attestation">
+<h2><span class="section-number">13.1.5. </span>Endpoint di Emissione della Key Attestation<a class="headerlink" href="#endpoint-di-emissione-della-key-attestation" title="Link to this heading">¶</a></h2>
+<p>Questo è un endpoint API RESTful fornito dal Wallet Provider che consente alla Wallet Instance di ottenere una Key Attestation, inviando una Richiesta di Emissione della Key Attestation.</p>
+<section id="richiesta-di-emissione-della-key-attestation">
+<h3><span class="section-number">13.1.5.1. </span>Richiesta di Emissione della Key Attestation<a class="headerlink" href="#richiesta-di-emissione-della-key-attestation" title="Link to this heading">¶</a></h3>
+<p>La  richiesta di emissione della Key Attestation utilizza il metodo HTTP POST con <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> impostato a <code class="docutils literal notranslate"><span class="pre">application/json</span></code>. (<a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-testcases"><span class="std std-ref">WP_026</span></a> e <a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-optional-testcases"><span class="std std-ref">WP_140–142</span></a>).</p>
+<p>L'header <code class="docutils literal notranslate"><span class="pre">typ</span></code> del JWT della richiesta di emissione Key Attestation Issuance assume il valore <code class="docutils literal notranslate"><span class="pre">wua-request+jwt</span></code>.</p>
+<p>Il body della richiesta di emissione Key Attestation contiene un parametro <code class="docutils literal notranslate"><span class="pre">assertion</span></code> il cui valore è un JWT firmato che include tutti i parametri di header e i claim del body descritti di seguito.</p>
+<p>Di seguito è riportato un esempio non normativo di una Key Attestation Request.</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/key-attestation</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
 <span class="na">Host</span><span class="o">:</span> <span class="l">application-provider.example.org</span>
 <span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
 
 <span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;assertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJpc3MiOiJodHRwczovL3dhbGxldC1wcm92aWRlc...&quot;</span>
+<span class="w">  </span><span class="nt">&quot;assertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;eyJpc3MiOiJPbnNpYW5kcklqcDdJbU55ZGlJNklsQ...&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>In particolare, il JWT della Wallet Unit Attestation Issuance include i seguenti parametri di header HTTP:</p>
-<table class="longtable docutils align-default" id="table-wua-request-claim">
+<p>In particolare, il JWT della Key Attestation Issuance include i seguenti parametri di header HTTP:</p>
+<table class="longtable docutils align-default" id="table-ka-request-claim">
 <colgroup>
 <col style="width: 20.0%" />
 <col style="width: 60.0%" />
@@ -775,11 +889,11 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 <tbody>
 <tr class="row-even"><td><p><strong>alg</strong></p></td>
 <td><p>Identificatore di algoritmo di firma digitale, come definito dal registro IANA &quot;JSON Web Signature and Encryption Algorithms&quot;. DEVE essere uno degli algoritmi supportati elencati in <a class="reference internal" href="algorithms.html#algoritmi-crittografici"><span class="std std-ref">Algoritmi Crittografici</span></a> e NON DEVE essere impostato a <code class="docutils literal notranslate"><span class="pre">none</span></code> né a un identificatore di algoritmo simmetrico (MAC).</p></td>
-<td><p>[<span class="target" id="index-26"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7516.html#section-4.1.1"><strong>RFC 7516#section-4.1.1</strong></a>]</p></td>
+<td><p>[<span class="target" id="index-24"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7516.html#section-4.1.1"><strong>RFC 7516#section-4.1.1</strong></a>]</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>kid</strong></p></td>
 <td><p>Thumbprint della JWK della Wallet Instance contenuta nel claim <code class="docutils literal notranslate"><span class="pre">cnf</span></code>.</p></td>
-<td><p>[<span class="target" id="index-27"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7638.html#section_3"><strong>RFC 7638#section_3</strong></a>]</p></td>
+<td><p>[<span class="target" id="index-25"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7638.html#section_3"><strong>RFC 7638#section_3</strong></a>]</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>typ</strong></p></td>
 <td><p>Il tipo del JWT; DEVE essere impostato a <code class="docutils literal notranslate"><span class="pre">wua-request+jwt</span></code>.</p></td>
@@ -787,7 +901,7 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </tr>
 </tbody>
 </table>
-<p>Il JWT della Wallet Unit Attestation Request include i seguenti claim nel body:</p>
+<p>Il JWT della Key Attestation Request include i seguenti claim nel body:</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -802,60 +916,56 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>iss</strong></p></td>
-<td><p>L'identificatore del Wallet Provider concatenato con la thumbprint della JWK nel claim <code class="docutils literal notranslate"><span class="pre">cnf</span></code>.</p></td>
+<td><p>Stringa contenente l'identificativo univoco della Wallet Instance.</p></td>
+<td><p>[<span class="target" id="index-26"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a>], [<span class="target" id="index-27"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>].</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>exp</strong></p></td>
+<td><p>Timestamp UNIX che rappresenta il tempo di scadenza del JWT.</p></td>
 <td><p>[<span class="target" id="index-28"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a>], [<span class="target" id="index-29"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>].</p></td>
 </tr>
-<tr class="row-odd"><td><p><strong>aud</strong></p></td>
-<td><p>L'identificatore del Wallet Provider.</p></td>
+<tr class="row-even"><td><p><strong>iat</strong></p></td>
+<td><p>Timestamp UNIX che rappresenta il tempo di emissione del JWT.</p></td>
 <td><p>[<span class="target" id="index-30"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a>], [<span class="target" id="index-31"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>].</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>exp</strong></p></td>
-<td><p>Timestamp UNIX che rappresenta il tempo di scadenza del JWT.</p></td>
-<td><p>[<span class="target" id="index-32"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a>], [<span class="target" id="index-33"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>].</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>iat</strong></p></td>
-<td><p>Timestamp UNIX che rappresenta il tempo di emissione del JWT.</p></td>
-<td><p>[<span class="target" id="index-34"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a>], [<span class="target" id="index-35"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>].</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>nonce</strong></p></td>
+<tr class="row-odd"><td><p><strong>nonce</strong></p></td>
 <td><p>Il <code class="docutils literal notranslate"><span class="pre">nonce</span></code> ottenuto dal Nonce Endpoint.</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>keys_to_attest</strong></p></td>
+<tr class="row-even"><td><p><strong>keys_to_attest</strong></p></td>
 <td><p>Array JSON di stringhe JWT, ciascuna delle quali rappresenta una <code class="docutils literal notranslate"><span class="pre">Key_Attestation_Requests</span></code>.</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>hardware_signature</strong></p></td>
+<tr class="row-odd"><td><p><strong>hardware_signature</strong></p></td>
 <td><p>La firma di <code class="docutils literal notranslate"><span class="pre">client_data_hash</span></code> ottenuta utilizzando la Cryptographic Hardware Key, codificata nel formato <code class="docutils literal notranslate"><span class="pre">base64url</span></code>.</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>integrity_assertion</strong></p></td>
+<tr class="row-even"><td><p><strong>integrity_assertion</strong></p></td>
 <td><p>L'Integrity Assertion per la Wallet Instance Attestation ottenuta dalle <strong>Device Integrity Service APIs</strong> con holder binding di <code class="docutils literal notranslate"><span class="pre">client_data_hash</span></code>.</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>hardware_key_tag</strong></p></td>
+<tr class="row-odd"><td><p><strong>hardware_key_tag</strong></p></td>
 <td><p>Il valore del Cryptographic Hardware Key Tag.</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>cnf</strong></p></td>
+<tr class="row-even"><td><p><strong>cnf</strong></p></td>
 <td><p>Oggetto JSON contenente la parte pubblica della prima coppia di chiavi asimmetriche (primo elemento di <code class="docutils literal notranslate"><span class="pre">keys_to_attest</span></code>) posseduta dalla Wallet Instance.</p></td>
-<td><p><span class="target" id="index-36"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7800.html"><strong>RFC 7800</strong></a>.</p></td>
+<td><p><span class="target" id="index-32"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7800.html"><strong>RFC 7800</strong></a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>platform</strong></p></td>
+<tr class="row-odd"><td><p><strong>platform</strong></p></td>
 <td><p>Stringa contenente il valore del sistema operativo del dispositivo.</p></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>wallet_solution_id</strong></p></td>
+<tr class="row-even"><td><p><strong>wallet_solution_id</strong></p></td>
 <td><p>Stringa contenente l'identificatore della Wallet Solution.</p></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><strong>wallet_solution_version</strong></p></td>
+<tr class="row-odd"><td><p><strong>wallet_solution_version</strong></p></td>
 <td><p>Stringa contenente la versione della Wallet Solution.</p></td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>Di seguito è riportato un esempio non normativo dell'header e del payload JWT di una Wallet Unit Attestation Request.</p>
+<p>Di seguito è riportato un esempio non normativo dell'header e del payload JWT di una Key Attestation Request.</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;alg&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ES256&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;kid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OnsiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiL&quot;</span><span class="p">,</span>
@@ -864,8 +974,7 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </pre></div>
 </div>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wallet-provider.example.org/instance/OnsiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiL&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="nt">&quot;aud&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wallet-provider.example.org/&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OnsiandrIjp7ImNydiI6IlAtMjU2Iiwia3R5IjoiRUMiL&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;nonce&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;f3b29a81-45c7-4d12-b8b5-e1f6c9327aef&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;hardware_signature&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;KoZIhvcNAQcCoIAwgAIB...&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;integrity_assertion&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;o2NmbXRvYXBwbGUtYXBwYXNzZXJ0aW9uLXBheWxvYWQtYXBw...&quot;</span><span class="p">,</span>
@@ -889,9 +998,9 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </pre></div>
 </div>
 </section>
-<section id="risposta-all-emissione-della-wallet-unit-attestation">
-<h3><span class="section-number">13.1.5.2. </span>Risposta all'Emissione della Wallet Unit Attestation<a class="headerlink" href="#risposta-all-emissione-della-wallet-unit-attestation" title="Link to this heading">¶</a></h3>
-<p>Se la Wallet Unit Attestation Issuance Request viene validata con successo, il Wallet Provider restituisce una risposta HTTP con codice di stato <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code> e <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> <code class="docutils literal notranslate"><span class="pre">application/json</span></code>. L'oggetto JSON restituito include <code class="docutils literal notranslate"><span class="pre">wallet_unit_attestation</span></code> (si veda <a class="reference internal" href="wallet-attestation-issuance.html#emissione-della-wallet-unit-attestation"><span class="std std-ref">Emissione della Wallet Unit Attestation</span></a>). <code class="docutils literal notranslate"><span class="pre">wallet_unit_attestation</span></code> è firmata dal Wallet Provider (<a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-testcases"><span class="std std-ref">WP_027–029</span></a> e <a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-optional-testcases"><span class="std std-ref">WP_143–144</span></a>). La Wallet Unit Attestation JWT deve essere utilizzata nella fase di Emissione di un Attestato Elettronico, come intestazione JOSE <code class="docutils literal notranslate"><span class="pre">key_attestation</span></code> nel JWT di tipo <code class="docutils literal notranslate"><span class="pre">proof</span></code>, e verrà inviata al Fornitore di Attestati Elettronici come discusso in <a class="reference internal" href="credential-issuance.html#emissione-di-attestati-elettronici"><span class="std std-ref">Emissione di Attestati Elettronici</span></a>.</p>
+<section id="risposta-all-emissione-della-key-attestation">
+<h3><span class="section-number">13.1.5.2. </span>Risposta all'Emissione della Key Attestation<a class="headerlink" href="#risposta-all-emissione-della-key-attestation" title="Link to this heading">¶</a></h3>
+<p>Se la Key Attestation Issuance Request viene validata con successo, il Wallet Provider restituisce una risposta HTTP con codice di stato <code class="docutils literal notranslate"><span class="pre">200</span> <span class="pre">OK</span></code> e <code class="docutils literal notranslate"><span class="pre">Content-Type</span></code> <code class="docutils literal notranslate"><span class="pre">application/json</span></code>. L'oggetto JSON restituito include <code class="docutils literal notranslate"><span class="pre">key_attestation</span></code> (si veda <a class="reference internal" href="wallet-attestation-issuance.html#emissione-della-key-attestation"><span class="std std-ref">Emissione della Key Attestation</span></a>). <code class="docutils literal notranslate"><span class="pre">key_attestation</span></code> è firmata dal Wallet Provider (<a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-testcases"><span class="std std-ref">WP_027–029</span></a> e <a class="reference internal" href="test-plans-wallet-provider.html#wallet-instance-optional-testcases"><span class="std std-ref">WP_143–144</span></a>). La Key Attestation JWT deve essere utilizzata nella fase di Emissione di un Attestato Elettronico, come intestazione JOSE <code class="docutils literal notranslate"><span class="pre">key_attestation</span></code> nel JWT di tipo <code class="docutils literal notranslate"><span class="pre">proof</span></code>, e verrà inviata al Fornitore di Attestati Elettronici come discusso in <a class="reference internal" href="credential-issuance.html#emissione-di-attestati-elettronici"><span class="std std-ref">Emissione di Attestati Elettronici</span></a>.</p>
 <p>L'oggetto JSON restituito nella risposta contiene il seguente parametro:</p>
 <table class="longtable docutils align-default">
 <colgroup>
@@ -906,13 +1015,13 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><strong>wallet_unit_attestation</strong></p></td>
-<td><p>OBBLIGATORIO. Una stringa che rappresenta la Wallet Unit Attestation rilasciata.</p></td>
+<tr class="row-even"><td><p><strong>key_attestation</strong></p></td>
+<td><p>OBBLIGATORIO. Una stringa che rappresenta la Key Attestation rilasciata.</p></td>
 <td><p>Questa specifica.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Il valore del parametro <code class="docutils literal notranslate"><span class="pre">wallet_unit_attestation</span></code> è una stringa che rappresenta la Wallet Unit Attestation in formato JWT.</p>
+<p>Il valore del parametro <code class="docutils literal notranslate"><span class="pre">key_attestation</span></code> è una stringa che rappresenta la Key Attestation in formato JWT.</p>
 <p>Se durante il processo si verificano errori, viene restituita una risposta di errore come definito nella sezione precedente.</p>
 <p>La tabella seguente elenca i codici di stato HTTP e i relativi codici di errore per i casi che differiscono da quanto già riportato:</p>
 <table class="longtable docutils align-default">
@@ -938,14 +1047,14 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">403</span> <span class="pre">Forbidden</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">invalid_request</span></code></p></td>
-<td><p>La firma della Wallet Unit Attestation Request non è valida oppure non corrisponde alla chiave pubblica associata (JWK).</p></td>
+<td><p>La firma della key Attestation Request non è valida oppure non corrisponde alla chiave pubblica associata (JWK).</p></td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="wallet-unit-attestation-jwt">
-<h3><span class="section-number">13.1.5.3. </span>Wallet Unit Attestation JWT<a class="headerlink" href="#wallet-unit-attestation-jwt" title="Link to this heading">¶</a></h3>
-<p>L'intestazione JOSE del Wallet Unit Attestation JWT contiene i seguenti parametri:</p>
+<section id="key-attestation-jwt">
+<h3><span class="section-number">13.1.5.3. </span>Key Attestation JWT<a class="headerlink" href="#key-attestation-jwt" title="Link to this heading">¶</a></h3>
+<p>L'intestazione JOSE del Key Attestation JWT contiene i seguenti parametri:</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -961,14 +1070,14 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 <tbody>
 <tr class="row-even"><td><p><strong>alg</strong></p></td>
 <td><p>OBBLIGATORIO. Un identificatore di algoritmo di firma digitale come da registro IANA &quot;JSON Web Signature and Encryption Algorithms&quot;. DEVE essere uno degli algoritmi supportati elencati in <a class="reference internal" href="algorithms.html#algoritmi-crittografici"><span class="std std-ref">Algoritmi Crittografici</span></a> e NON DEVE essere impostato su <code class="docutils literal notranslate"><span class="pre">none</span></code> o qualsiasi identificatore di algoritmo simmetrico (MAC).</p></td>
-<td><p><span class="target" id="index-37"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7516.html#section-4.1.1"><strong>RFC 7516#section-4.1.1</strong></a>.</p></td>
+<td><p><span class="target" id="index-33"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7516.html#section-4.1.1"><strong>RFC 7516#section-4.1.1</strong></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>kid</strong></p></td>
-<td><p>OBBLIGATORIO. Identificatore univoco della chiave pubblica associata alla chiave privata che il Fornitore di Wallet ha utilizzato per firmare la Wallet Unit Attestation.</p></td>
-<td><p><span class="target" id="index-38"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7638.html#section_3"><strong>RFC 7638#section_3</strong></a>.</p></td>
+<td><p>OBBLIGATORIO. Identificatore univoco della chiave pubblica associata alla chiave privata che il Fornitore di Wallet ha utilizzato per firmare la Key Attestation.</p></td>
+<td><p><span class="target" id="index-34"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7638.html#section_3"><strong>RFC 7638#section_3</strong></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>typ</strong></p></td>
-<td><p>OBBLIGATORIO. Deve essere impostato su <code class="docutils literal notranslate"><span class="pre">key-attestation+jwt</span></code></p></td>
+<td><p>OBBLIGATORIO. DEVE essere impostato su <code class="docutils literal notranslate"><span class="pre">key-attestation+jwt</span></code></p></td>
 <td><p><a class="reference external" href="https://openid.net/specs/openid4vc-high-assurance-interoperability-profile-1_0-06.html">OPENID4VC-HAIP</a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>trust_chain</strong></p></td>
@@ -976,12 +1085,12 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 <td><p><a class="reference external" href="https://openid.net/specs/openid-federation-1_0.html">OID-FED</a> Sezione 4.3 <em>Trust Chain Header Parameter</em>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>x5c</strong></p></td>
-<td><p>OBBLIGATORIO. Contiene il certificato di chiave pubblica X.509 o la catena di certificati (<span class="target" id="index-39"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5280.html"><strong>RFC 5280</strong></a>) corrispondente alla chiave utilizzata per firmare digitalmente il JWT.</p></td>
-<td><p><span class="target" id="index-40"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7515.html"><strong>RFC 7515</strong></a> Sezione 4.1.8 e <a class="reference external" href="https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/12/">SD-JWT-VC</a> Sezione 3.5.</p></td>
+<td><p>OBBLIGATORIO. Contiene il certificato di chiave pubblica X.509 o la catena di certificati (<span class="target" id="index-35"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc5280.html"><strong>RFC 5280</strong></a>) corrispondente alla chiave utilizzata per firmare digitalmente il JWT.</p></td>
+<td><p><span class="target" id="index-36"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7515.html"><strong>RFC 7515</strong></a> Sezione 4.1.8 e <a class="reference external" href="https://datatracker.ietf.org/doc/draft-ietf-oauth-sd-jwt-vc/12/">SD-JWT-VC</a> Sezione 3.5.</p></td>
 </tr>
 </tbody>
 </table>
-<p>Il corpo del Wallet Unit Attestation JWT contiene le seguenti dichiarazioni (claims):</p>
+<p>Il corpo del Key Attestation JWT contiene le seguenti dichiarazioni (claims):</p>
 <table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 20.0%" />
@@ -996,27 +1105,28 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>iss</strong></p></td>
-<td><p>OBBLIGATORIO. Identificatore del Fornitore di Wallet.</p></td>
-<td><p><span class="target" id="index-41"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-42"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
+<td><p>OBBLIGATORIO. Stringa contenente l'URL che identifica il Fornitore di Wallet.</p></td>
+<td><p><span class="target" id="index-37"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>exp</strong></p></td>
 <td><p>OBBLIGATORIO. Timestamp UNIX con il tempo di scadenza del JWT.</p></td>
-<td><p><span class="target" id="index-43"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-44"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
+<td><p><span class="target" id="index-38"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-39"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>iat</strong></p></td>
 <td><p>OBBLIGATORIO. Timestamp UNIX con il tempo di emissione del JWT.</p></td>
-<td><p><span class="target" id="index-45"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-46"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
+<td><p><span class="target" id="index-40"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc9126.html"><strong>RFC 9126</strong></a> e <span class="target" id="index-41"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7519.html"><strong>RFC 7519</strong></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>attested_keys</strong></p></td>
 <td><p>OBBLIGATORIO. Un array non vuoto di chiavi attestate provenienti dallo stesso componente di archiviazione delle chiavi, utilizzando la sintassi JWK, contenente la parte pubblica di una coppia di chiavi asimmetriche posseduta dall'istanza del Wallet.</p></td>
-<td><p><span class="target" id="index-47"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7517.html"><strong>RFC 7517</strong></a>.</p></td>
+<td><p><span class="target" id="index-42"></span><a class="rfc reference external" href="https://datatracker.ietf.org/doc/html/rfc7517.html"><strong>RFC 7517</strong></a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>key_storage</strong></p></td>
 <td><p>OBBLIGATORIO. Un array non vuoto di stringhe sensibili alle maiuscole che dichiarano la resistenza al potenziale di attacco del componente di archiviazione delle chiavi e delle chiavi attestate nel parametro <code class="docutils literal notranslate"><span class="pre">attested_keys</span></code>. I seguenti valori sono definiti come possibili valori per questa dichiarazione claim:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_high</span></code>: Deve essere utilizzato quando l'archiviazione delle chiavi è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">High</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_moderate</span></code>: Deve essere utilizzato quando l'archiviazione delle chiavi è resistente ad attacchi con potenziale di attacco  <code class="docutils literal notranslate"><span class="pre">Moderate</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_basic</span></code>: Deve essere utilizzato quando l'archiviazione delle chiavi è resistente ad attacchi con potenziale di attacco  <code class="docutils literal notranslate"><span class="pre">Basic</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_high</span></code>: DEVE essere utilizzato quando l'archiviazione delle chiavi è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">High</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_moderate</span></code>: DEVE essere utilizzato quando l'archiviazione delle chiavi è resistente ad attacchi con potenziale di attacco  <code class="docutils literal notranslate"><span class="pre">Moderate</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_enhanced-basic</span></code>: DEVE essere utilizzato quando l'archiviazione delle chiavi è resistente ad attacchi con potenziale di attacco  <code class="docutils literal notranslate"><span class="pre">Enhanced-Basic</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_basic</span></code>: DEVE essere utilizzato quando l'archiviazione delle chiavi è resistente ad attacchi con potenziale di attacco  <code class="docutils literal notranslate"><span class="pre">Basic</span></code>.</p></li>
 </ul>
 </td>
 <td><p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>.</p></td>
@@ -1024,39 +1134,29 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 <tr class="row-odd"><td><p><strong>user_authentication</strong></p></td>
 <td><p>OBBLIGATORIO. Un array non vuoto di stringhe sensibili alle maiuscole che dichiarano la resistenza al potenziale di attacco dei metodi di autenticazione utente autorizzati ad accedere alle chiavi private dal parametro attested_keys. I seguenti valori sono definiti come possibili valori per questa dichiarazione claim:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_high</span></code>: Deve essere utilizzato quando l'autenticazione dell'utente è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">High</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_moderate</span></code>: Deve essere utilizzato quando l'autenticazione dell'utente è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">Moderate</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_basic</span></code>: Deve essere utilizzato quando l'autenticazione dell'utente è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">Basic</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_high</span></code>: DEVE essere utilizzato quando l'autenticazione dell'utente è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">High</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_moderate</span></code>: DEVE essere utilizzato quando l'autenticazione dell'utente è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">Moderate</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_enhanced-basic</span></code>: DEVE essere utilizzato quando l'autenticazione dell'utente è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">Enhanced-Basic</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">iso_18045_basic</span></code>: DEVE essere utilizzato quando l'autenticazione dell'utente è resistente ad attacchi con potenziale di attacco <code class="docutils literal notranslate"><span class="pre">Basic</span></code>.</p></li>
 </ul>
 </td>
 <td><p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>.</p></td>
 </tr>
 <tr class="row-even"><td><p><strong>status</strong></p></td>
-<td><p>OBBLIGATORIO. Oggetto JSON che rappresenta i meccanismi supportati per la verifica della revoca, come ad esempio OAuth Status List.</p></td>
-<td><p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>.</p></td>
+<td><p>OBBLIGATORIO. Meccanismo di stato per la Key Attestation.</p>
+<ul class="simple">
+<li><p><strong>status_list</strong>: OBBLIGATORIO. un riferimento alla lista di stato, come specificato nell'Appendice D di <a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>. Il valore rappresenta lo stato di revoca del WSCD o del Keystore.</p></li>
+</ul>
+</td>
+<td><p><a class="reference external" href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#231-general_info">EUDI-TS 3</a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>certification</strong></p></td>
 <td><p>OPZIONALE. Una stringa che contiene un URL che rimanda alla certificazione del componente di archiviazione delle chiavi.</p></td>
 <td><p><a class="reference external" href="https://openid.net/specs/openid-4-verifiable-credential-issuance-1_0.html">OpenID4VCI</a>.</p></td>
 </tr>
-<tr class="row-even"><td><p><strong>eudi_wallet_info</strong></p></td>
-<td><p>OPZIONALE. Oggetto JSON contenente le informazioni generali sul Wallet e sul Wallet Provider. Il seguente parametro DEVE essere incluso:</p>
-<ul class="simple">
-<li><p><strong>general_info</strong>: OBBLIGATORIO. Un oggetto che contiene i seguenti parametri:</p>
-<ul>
-<li><p><strong>wallet_provider_name</strong>: OBBLIGATORIO. Valore stringa del nome del Wallet Provider come riportato nella lista fidata dei Wallet Provider.</p></li>
-<li><p><strong>wallet_solution_id</strong>: OBBLIGATORIO. Valore stringa dell'identificatore della Wallet Solution come riportato nella lista fidata dei Wallet Provider.</p></li>
-<li><p><strong>wallet_solution_version</strong>: OBBLIGATORIO. Valore stringa della versione della Wallet Solution.</p></li>
-<li><p><strong>wallet_solution_certification_information</strong>: OBBLIGATORIO. Valore stringa che contiene un URL che rimanda alla certificazione della Wallet Solution.</p></li>
-</ul>
-</li>
-</ul>
-</td>
-<td><p><a class="reference external" href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#231-general_info">EUDI-TS 3</a>.</p></td>
-</tr>
 </tbody>
 </table>
-<p>Di seguito è riportato un esempio non normativo dell'intestazione e del payload del Wallet Unit Attestation JWT, senza codifica né firma applicata:</p>
+<p>Di seguito è riportato un esempio non normativo dell'intestazione e del payload del Key Attestation JWT, senza codifica né firma applicata:</p>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">    </span><span class="nt">&quot;typ&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;key-attestation+jwt&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;x5c&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -1070,46 +1170,36 @@ Quando si recuperano tutte le Istanze di Wallet, la risposta DEVE restituire un 
 </pre></div>
 </div>
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wallet-provider.example.org&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nt">&quot;attested_keys&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">        </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;crv&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;P-256&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;kty&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EC&quot;</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;x&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;4HNptI-xr2pjyRJKGMnz4WmdnQD_uJSq4R95Nj98b44&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIZnSB39vFJhYgS3k7jXE4r3-CoGFQwZtPBIRqpNlrg&quot;</span>
+<span class="w">            </span><span class="nt">&quot;y&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LIZnSB39vFJhYgS3k7jXE4r3-CoGFQwZtPBIRqpNlrg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;kid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;vbeXJksM45xphtANnCiG6mCyuU4jfGNzopGuKvogg9c&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;iss&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://wallet-provider.example.org&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;key_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;iso_18045_moderate&quot;</span><span class="w"> </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;status&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="nt">&quot;status_list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="nt">&quot;idx&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">412</span><span class="p">,</span>
 <span class="w">            </span><span class="nt">&quot;uri&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;https://revocation_url/statuslists/1&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">    </span><span class="p">},</span>
-<span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1687281195</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1687288395</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;key_storage&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;iso_18045_moderate&quot;</span><span class="w"> </span><span class="p">],</span>
 <span class="w">    </span><span class="nt">&quot;user_authentication&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;iso_18045_moderate&quot;</span><span class="w"> </span><span class="p">],</span>
-<span class="w">    </span><span class="nt">&quot;eudi_wallet_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nt">&quot;general_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;wallet_provider_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ExampleOrg&quot;</span><span class="p">,</span><span class="w"> </span>
-<span class="w">            </span><span class="nt">&quot;wallet_solution_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Wallet-mobile&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;wallet_solution_version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;wallet_solution_certification_information&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nt">&quot;key_storage_info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">           </span><span class="nt">&quot;storage_type&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;LOCAL_NATIVE&quot;</span><span class="p">,</span><span class="w">	</span>
-<span class="w">           </span><span class="nt">&quot;keys_exportable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">           </span><span class="nt">&quot;storage_certification_information&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">      </span><span class="p">}</span>
+<span class="w">    </span><span class="nt">&quot;iat&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1687281195</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;exp&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1687288395</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Nota</p>
-<p>Poiché lo schema di certificazione non è ancora stato definito, il contenuto esatto di <code class="docutils literal notranslate"><span class="pre">wallet_solution_certification_information</span></code> è indefinito.
-Questo contenuto sarà definito in un aggiornamento futuro. Analogamente, il contenuto esatto di <code class="docutils literal notranslate"><span class="pre">storage_certification_information</span></code> è attualmente indefinito e sarà specificato in un aggiornamento futuro, ma DOVRÀ fornire informazioni sufficienti per determinare se l'archiviazione della chiave è un WSCD.
-Si noti che la specifica OID4VCI definisce un attributo <code class="docutils literal notranslate"><span class="pre">certification</span></code> nell'elemento <code class="docutils literal notranslate"><span class="pre">key_attestation</span></code> che potrebbe essere utilizzato al posto di <code class="docutils literal notranslate"><span class="pre">storage_certification_information</span></code>.</p>
+<p>Poiché lo schema di certificazione non è ancora stato definito, il contenuto esatto di <code class="docutils literal notranslate"><span class="pre">certification</span></code> non è definito e sarà specificato in un futuro aggiornamento.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Come meccanismo di revoca per la KA, è preferito l'indice condiviso per tipo descritto nella Sezione 2.5.2 di <a class="reference external" href="https://github.com/eu-digital-identity-wallet/eudi-doc-standards-and-technical-specifications/blob/main/docs/technical-specifications/ts3-wallet-unit-attestation.md#231-general_info">EUDI-TS 3</a>.</p>
 </div>
 </section>
 </section>
@@ -1145,19 +1235,58 @@ Un Fornitore di Attestati Elettronici di Dati di Identificazione Personale che �
 </section>
 
 
-            <div class="clearer"></div>
           </div>
-        </div>
+          <nav class="it-docs-pager d-flex flex-wrap justify-content-between gap-3 mt-5" aria-label="Page navigation">
+            <div class="it-docs-pager-prev">
+              <a class="btn btn-outline-primary" href="endpoints.html">
+                <svg class="icon icon-sm me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M14.6 17.2 9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
+</svg>
+                <span>13. Endpoints</span>
+              </a>
+            </div>
+            <div class="it-docs-pager-next ms-auto">
+              <a class="btn btn-primary" href="credential-issuer-endpoint.html">
+                <span>13.2. Endpoint del Credential Issuer</span>
+                <svg class="icon icon-sm ms-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m9.8 17.2-.8-.7 4.9-4.9L9 6.7l.8-.7 5.6 5.6z"/>
+</svg>
+              </a>
+            </div>
+          </nav>
+        </main>
       </div>
-    
-        <div id="show_right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
-        </div>
 
-        <div id="right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
-            <div class="page_toc">
-                <ul>
+      <aside class="col-12 col-lg-3 it-docs-navscroll-col" aria-label="Secondary navigation">
+        <div class="it-docs-navscroll-sticky it-docs-menu-scroll"><nav class="navbar it-navscroll-wrapper navbar-expand-lg it-top-navscroll it-left-side it-docs-navscroll"
+     data-bs-navscroll
+     aria-label="Page contents">
+  <button class="custom-navbar-toggler"
+          type="button"
+          data-it-docs-nav-toggle
+          data-it-docs-nav-target="#itDocsNavscroll"
+          aria-controls="itDocsNavscroll"
+          aria-expanded="false"
+          aria-label="Open page contents">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+    <span>Page contents</span>
+  </button>
+  <div class="navbar-collapsable it-docs-navscroll-panel" id="itDocsNavscroll">
+    <div class="overlay"></div>
+    <div class="close-div">
+      <button class="btn close-menu" type="button" aria-label="Close page contents">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m12.7 12 3.7 3.6-.8.8-3.6-3.7-3.6 3.7-.8-.8 3.7-3.6-3.7-3.6.8-.8 3.6 3.7 3.6-3.7.8.8-3.7 3.6z"/>
+</svg>
+      </button>
+    </div>
+    <div class="menu-wrapper it-docs-menu-scroll">
+      <div class="link-list-wrapper">
+        <h2 class="it-docs-nav-section-label">On this page</h2>
+        <div class="it-docs-local-toc">
+          <ul>
 <li><a class="reference internal" href="#">13.1. Endpoint del Fornitore di Wallet</a><ul>
 <li><a class="reference internal" href="#endpoint-di-federazione">13.1.1. Endpoint di Federazione</a></li>
 <li><a class="reference internal" href="#endpoint-nonce-della-soluzione-wallet">13.1.2. Endpoint Nonce della Soluzione Wallet</a></li>
@@ -1179,10 +1308,10 @@ Un Fornitore di Attestati Elettronici di Dati di Identificazione Personale che �
 <li><a class="reference internal" href="#jwt-della-wallet-instance-attestation">13.1.4.3. JWT della Wallet Instance Attestation</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#endpoint-di-emissione-della-wallet-unit-attestation">13.1.5. Endpoint di Emissione della Wallet Unit Attestation</a><ul>
-<li><a class="reference internal" href="#richiesta-di-emissione-della-wallet-unit-attestation">13.1.5.1. Richiesta di Emissione della Wallet Unit Attestation</a></li>
-<li><a class="reference internal" href="#risposta-all-emissione-della-wallet-unit-attestation">13.1.5.2. Risposta all'Emissione della Wallet Unit Attestation</a></li>
-<li><a class="reference internal" href="#wallet-unit-attestation-jwt">13.1.5.3. Wallet Unit Attestation JWT</a></li>
+<li><a class="reference internal" href="#endpoint-di-emissione-della-key-attestation">13.1.5. Endpoint di Emissione della Key Attestation</a><ul>
+<li><a class="reference internal" href="#richiesta-di-emissione-della-key-attestation">13.1.5.1. Richiesta di Emissione della Key Attestation</a></li>
+<li><a class="reference internal" href="#risposta-all-emissione-della-key-attestation">13.1.5.2. Risposta all'Emissione della Key Attestation</a></li>
+<li><a class="reference internal" href="#key-attestation-jwt">13.1.5.3. Key Attestation JWT</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#catalogo-e-service-pdnd-del-fornitore-di-wallet">13.1.6. Catalogo e-Service PDND del Fornitore di Wallet</a><ul>
@@ -1193,35 +1322,52 @@ Un Fornitore di Attestati Elettronici di Dati di Identificazione Personale che �
 </li>
 </ul>
 
-            </div>
         </div>
-    
-
-      <div class="clearer"></div>
+      </div>
     </div>
-    <div class="button_nav_wrapper">
-        <div class="button_nav">
-            <div class="left">
-                
-                <a href="endpoints.html">
-                    <span class="icon">&lt;</span><span><span class="section-number">13. </span>Endpoints</span></a>
-                
-            </div>
-
-            <div class="right">
-                
-                    <a href="credential-issuer-endpoint.html"><span><span class="section-number">13.2. </span>Endpoint del Credential Issuer</span><span class="icon">&gt;</span></a>
-                
-            </div>
+  </div>
+</nav>
         </div>
+      </aside>
     </div>
-
-
-    <div class="footer" role="contentinfo">
-      Ultimo aggiornamento 17/06/2026.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
+  </div>
+</div>
+<footer id="page-footer" class="it-docs-footer" role="contentinfo" tabindex="-1">
+  <div class="container">
+    <div class="it-docs-footer-inner"><nav id="footer-partners-nav"
+     class="it-docs-footer-partners"
+     aria-label="Institutional partners">
+  <ul class="it-docs-footer-partners-list">
+    <li>
+      <a href="https://innovazione.gov.it/"
+         class="it-docs-footer-partner-link it-docs-footer-partner-link--dtd"
+         target="_blank"
+         rel="noopener">
+        <img src="_static/img/footer/logo-dtd.svg"
+             alt="Department for Digital Transformation"
+             width="120"
+             height="32"
+             loading="lazy"
+             decoding="async">
+      </a>
+    </li>
+  </ul>
+</nav><div class="it-docs-footer-meta">
+        <p class="it-docs-footer-details"><span class="it-docs-footer-detail">Version 1.4.5</span><span class="it-docs-footer-detail">Last updated 22/07/2026</span><span class="it-docs-footer-detail">
+            Sphinx 7.4.5
+          </span></p>
+      </div>
     </div>
-
-<p id="theme_credit"></p>
+  </div>
+</footer><a href="#"
+   class="back-to-top shadow it-docs-back-to-top"
+   data-bs-toggle="backtotop"
+   data-bs-scroll-limit="100"
+   data-bs-position-top="0"
+   aria-label="Torna su">
+  <svg class="icon it-docs-back-to-top-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M18.6 10.1 12 3.5l-6.6 6.6.7.7 5.4-5.3V21h1V5.5l5.4 5.3.7-.7z"/>
+</svg>
+</a>
   </body>
 </html>

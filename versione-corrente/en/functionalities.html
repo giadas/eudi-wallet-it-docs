@@ -5,130 +5,261 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>5. User Experience Design &#8212; IT-Wallet Technical Specifications - Editor&#39;s Copy</title>
+    <title>5. User Experience Design &#8212; IT-Wallet Technical Specifications</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/basic_mod.css?v=9b2032db" />
-    <link rel="stylesheet" type="text/css" href="_static/itwallet-override.css?v=63798874" />
-    <script src="_static/documentation_options.js?v=350a9c04"></script>
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs.css?v=6356115f" />
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs-fonts.css?v=5c444340" />
+    <link rel="stylesheet" type="text/css" href="_static/shared-ui/css/bootstrap-italia.min.css?v=b319c0cd" />
+    <link rel="stylesheet" type="text/css" href="_static/shared-ui/css/ita.min.css?v=db8a8e6d" />
+    <link rel="stylesheet" type="text/css" href="_static/eid-wallet-docs-overrides.css?v=b90024cc" />
+
+    <script src="_static/documentation_options.js?v=c97b86a3"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="_static/js/theme.js"></script>
-    <script src="_static/js/petite-vue.js"></script>
+<script src="_static/shared-ui/js/jquery-3.7.0.min.js"></script>
+<script src="_static/shared-ui/js/ita.min.js"></script>
+<script src="_static/shared-ui/js/bootstrap-italia.bundle.min.js"></script>
+<script src="_static/js/eid-wallet-docs.js"></script>
     <link rel="icon" href="https://avatars.githubusercontent.com/u/15377824?s=48&amp;v=4"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="6. The Infrastructure of Trust" href="trust-infrastructure.html" />
-    <link rel="prev" title="4. Onboarding System" href="onboarding-high-level.html" /> 
-  </head><body data-dark_mode_code_blocks="true">
-
-<div id="top_nav">
-    
-
-    <nav>
-        
-            
-        
-
-        <p id="toggle_sidebar">
-            <a href="#" title="Toggle sidebar">|||</a>
-        </p>
-        <h1><a href="index.html" title="Go to homepage">IT-Wallet Technical Specifications - Editor's Copy</a></h1>
-            <a id="source_link" href="https://github.com/italia/eudi-wallet-it-docs">
-    
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-            <path fill="white" d="M 244.8,8 C 106.1,8 0,113.3 0,252 c 0,110.9 69.8,205.8 169.5,239.2 12.8,2.3 17.3,-5.6 17.3,-12.1 0,-6.2 -0.3,-40.4 -0.3,-61.4 0,0 -70,15 -84.7,-29.8 0,0 -11.4,-29.1 -27.8,-36.6 0,0 -22.9,-15.7 1.6,-15.4 0,0 24.9,2 38.6,25.8 21.9,38.6 58.6,27.5 72.9,20.9 2.3,-16 8.8,-27.1 16,-33.7 -55.9,-6.2 -112.3,-14.3 -112.3,-110.5 0,-27.5 7.6,-41.3 23.6,-58.9 -2.6,-6.5 -11.1,-33.3 2.6,-67.9 20.9,-6.5 69,27 69,27 20,-5.6 41.5,-8.5 62.8,-8.5 21.3,0 42.8,2.9 62.8,8.5 0,0 48.1,-33.6 69,-27 13.7,34.7 5.2,61.4 2.6,67.9 16,17.7 25.8,31.5 25.8,58.9 0,96.5 -58.9,104.2 -114.8,110.5 9.2,7.9 17,22.9 17,46.4 0,33.7 -0.3,75.4 -0.3,83.6 0,6.5 4.6,14.4 17.3,12.1 C 428.2,457.8 496,362.9 496,252 496,113.3 383.5,8 244.8,8 Z"/>
-        </svg>
-    
-</a>
-        
-
-        <a id="mode_toggle" href="#" @click.prevent="handleClick" :title="mode">
-    <template v-if="mode == 'light'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_light"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M67.48,18.073c1.913,-1.912 1.913,-5.018 0,-6.931c-1.912,-1.912 -5.018,-1.912 -6.931,0l-6.798,6.799c-1.912,1.912 -1.912,5.018 0,6.931c1.913,1.912 5.018,1.912 6.931,-0l6.798,-6.799Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.728,61.108c1.912,-1.913 1.912,-5.018 -0,-6.931c-1.913,-1.913 -5.019,-1.913 -6.931,-0l-6.799,6.798c-1.912,1.913 -1.912,5.019 0,6.931c1.913,1.913 5.019,1.913 6.931,0l6.799,-6.798Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.682,54.177c-1.913,-1.913 -5.018,-1.913 -6.931,-0c-1.912,1.913 -1.912,5.018 0,6.931l6.798,6.798c1.913,1.913 5.019,1.913 6.931,0c1.913,-1.912 1.913,-5.018 0,-6.931l-6.798,-6.798Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M4.901,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901l-0,9.614c-0,2.705 2.196,4.901 4.9,4.901c2.705,-0 4.901,-2.196 4.901,-4.901l0,-9.614Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M18.929,11.142c-1.912,-1.912 -5.018,-1.912 -6.931,0c-1.912,1.913 -1.912,5.019 0,6.931l6.799,6.799c1.912,1.912 5.018,1.912 6.931,-0c1.912,-1.913 1.912,-5.019 -0,-6.931l-6.799,-6.799Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.108,34.623c-2.705,0 -4.901,2.196 -4.901,4.901c-0,2.705 2.196,4.901 4.901,4.901l9.614,0c2.705,0 4.901,-2.196 4.901,-4.901c-0,-2.705 -2.196,-4.901 -4.901,-4.901l-9.614,0Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'dark'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_dark"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><circle cx="39.311" cy="39.524" r="15.734" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.212,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.901,2.196 -4.901,4.901c0,2.705 2.197,4.901 4.901,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.662,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.989,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.732,61.103c1.91,-1.91 1.91,-5.011 0,-6.921l-0.009,-0.01c-1.91,-1.91 -5.012,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.909,1.91 5.011,1.91 6.92,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.672,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.52,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l-0,-0.01c-0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.212,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.901,2.196 -4.901,4.901c0,2.704 2.197,4.9 4.901,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.73,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 -0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.098,34.623c-2.699,0 -4.891,2.192 -4.891,4.892l-0,0.019c-0,2.699 2.192,4.891 4.891,4.891c2.7,0 4.892,-2.192 4.892,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.892,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-
-    <template v-if="mode == 'darkest'">
-        <svg width="100%" height="100%" viewBox="0 0 79 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;"><g id="mode_darkest"><rect id="Bounds" x="0" y="-0" width="78.623" height="79.049" style="fill:none;"/><path d="M39.315,23.791c8.684,-0 15.734,7.05 15.734,15.733c0,8.684 -7.05,15.734 -15.734,15.734c-8.683,0 -15.733,-7.05 -15.733,-15.734c-0,-8.683 7.05,-15.733 15.733,-15.733Zm0,4.737c6.069,0 10.997,4.927 10.997,10.996c-0,6.069 -4.928,10.996 -10.997,10.996c-6.068,0 -10.996,-4.927 -10.996,-10.996c0,-6.069 4.928,-10.996 10.996,-10.996Z" style="fill:#fff;"/><g id="beams"><g id="beam"><path id="beam1" serif:id="beam" d="M44.216,14.515c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,0 -4.9,2.196 -4.9,4.901c-0,2.705 2.196,4.901 4.9,4.901c2.705,0 4.901,-2.196 4.901,-4.901Z" style="fill:#fff;"/></g><g id="beam2" serif:id="beam"><path id="beam3" serif:id="beam" d="M60.666,24.892c1.902,-1.902 1.902,-4.99 0,-6.892l-0.04,-0.039c-1.901,-1.902 -4.989,-1.902 -6.891,-0c-1.901,1.901 -1.901,4.989 0,6.891l0.04,0.04c1.902,1.901 4.99,1.901 6.891,-0Z" style="fill:#fff;"/></g><g id="beam4" serif:id="beam"><path id="beam5" serif:id="beam" d="M25.737,61.103c1.909,-1.91 1.909,-5.011 -0,-6.921l-0.01,-0.01c-1.91,-1.91 -5.011,-1.91 -6.921,-0c-1.91,1.91 -1.91,5.011 -0,6.921l0.01,0.01c1.91,1.91 5.011,1.91 6.921,-0Z" style="fill:#fff;"/></g><g id="beam6" serif:id="beam"><path id="beam7" serif:id="beam" d="M60.676,54.167c-1.907,-1.907 -5.004,-1.907 -6.911,0l-0.02,0.02c-1.907,1.907 -1.907,5.004 0,6.911c1.907,1.907 5.004,1.907 6.911,-0l0.02,-0.02c1.907,-1.907 1.907,-5.004 0,-6.911Z" style="fill:#fff;"/></g><g id="beam8" serif:id="beam"><path id="beam9" serif:id="beam" d="M14.524,34.623c-2.702,0 -4.896,2.194 -4.896,4.896l0,0.01c0,2.702 2.194,4.896 4.896,4.896c2.702,0 4.896,-2.194 4.896,-4.896l0,-0.01c0,-2.702 -2.194,-4.896 -4.896,-4.896Z" style="fill:#fff;"/></g><g id="beam10" serif:id="beam"><path id="beam11" serif:id="beam" d="M44.216,64.534c0,-2.705 -2.196,-4.901 -4.901,-4.901c-2.704,-0 -4.9,2.196 -4.9,4.901c-0,2.704 2.196,4.9 4.9,4.9c2.705,0 4.901,-2.196 4.901,-4.9Z" style="fill:#fff;"/></g><g id="beam12" serif:id="beam"><path id="beam13" serif:id="beam" d="M25.734,17.943c-1.911,-1.911 -5.015,-1.911 -6.926,0l-0.005,0.005c-1.911,1.911 -1.911,5.015 0,6.926c1.911,1.911 5.015,1.911 6.926,0l0.005,-0.005c1.911,-1.911 1.911,-5.014 0,-6.926Z" style="fill:#fff;"/></g><g id="beam14" serif:id="beam"><path id="beam15" serif:id="beam" d="M64.103,34.623c-2.7,0 -4.892,2.192 -4.892,4.892l-0,0.019c-0,2.699 2.192,4.891 4.892,4.891c2.699,0 4.891,-2.192 4.891,-4.891l0,-0.019c0,-2.7 -2.192,-4.892 -4.891,-4.892Z" style="fill:#fff;"/></g></g></g></svg>
-    </template>
-</a>
-
-<script>
-(function() {
-    const LOCAL_STORAGE_KEY = 'piccoloThemeMode'
-
-    var initialMode = localStorage.getItem(LOCAL_STORAGE_KEY)
-
-    if (initialMode) {
-        // Make sure the value in local storage is valid
-        if (['light', 'dark', 'darkest'].indexOf(initialMode) == -1) {
-            initialMode = 'light'
-            localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
+    <link rel="prev" title="4. Onboarding System" href="onboarding-high-level.html" />
+   
+  <meta name="description" content="IT-Wallet Technical Specifications">
+  <script>
+    (function () {
+      try {
+        var mode = localStorage.getItem("it-docs-brightness");
+        if (mode && /^(light|middle|black)$/.test(mode)) {
+          document.documentElement.setAttribute("data-it-docs-brightness", mode);
         }
-    } else {
-        // Check if the client prefers dark mode
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            initialMode = 'dark'
-        } else {
-            initialMode = 'light'
-        }
-        localStorage.setItem(LOCAL_STORAGE_KEY, initialMode)
-    }
+      } catch (error) {
+        /* ignore storage errors */
+      }
+    })();
+  </script>
+  </head><body class="it-docs-body">
+<nav class="it-skip-links" aria-label="Skip links">
+  <a id="skip-main" class="visually-hidden-focusable" href="#main-content">Skip to main content</a>
+  <a id="skip-footer" class="visually-hidden-focusable" href="#page-footer">Skip to footer</a>
+</nav>
 
-    document.documentElement.dataset.mode = initialMode
-
-    PetiteVue.createApp({
-        'mode': initialMode,
-        handleClick() {
-            let currentMode = this.mode
-
-            if (currentMode == 'light') {
-                this.mode = 'dark'
-            } else if (currentMode == 'dark') {
-                this.mode = 'darkest'
-            } else if (currentMode == 'darkest') {
-                this.mode = 'light'
-            }
-
-            document.documentElement.dataset.mode = this.mode
-            localStorage.setItem(LOCAL_STORAGE_KEY, this.mode)
-
-            console.log(this.mode)
-        }
-    }).mount('#mode_toggle')
-})()
-</script>
-            <p class="mobile_search_link">
-                <a href="search.html" title="Search">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2">
-                        <path d="M14.873 40.009c-2.315-3.943-3.642-8.532-3.642-13.429C11.231 11.91 23.141 0 37.811 0s26.58 11.91 26.58 26.58-11.91 26.58-26.58 26.58a26.44 26.44 0 0 1-14.277-4.161L9.739 62.794a3.12 3.12 0 0 1-4.413 0L.913 58.382c-1.217-1.218-1.217-3.196 0-4.413l13.96-13.96zM37.811 8.054c10.225 0 18.526 8.301 18.526 18.526s-8.301 18.526-18.526 18.526-18.526-8.301-18.526-18.526S27.586 8.054 37.811 8.054z" fill="#fff" />
-                    </svg>
-                </a>
-            </p>
-        
-
-        <div class="searchbox_wrapper">
-            
-<search id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</search>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<header class="it-header-wrapper it-docs-header" role="banner">
+  <div class="it-header-slim-wrapper bg-primary">
+    <div class="container">
+      <div class="it-header-slim-wrapper-content d-flex justify-content-between align-items-center">
+        <span class="navbar-brand text-white" id="header-region-name">
+          <strong>Dipartimento per la Trasformazione Digitale</strong>
+        </span>
+        <div class="it-header-slim-right-zone it-docs-slim-tools d-flex align-items-center"><div class="it-docs-searchbox--slim it-docs-searchbox" role="search">
+  <form class="it-docs-search-form" action="search.html" method="get">
+    <label class="visually-hidden" for="it-docs-search-input">Search</label>
+    <input id="it-docs-search-input"
+           class="form-control it-docs-search-input"
+           type="search"
+           name="q"
+           placeholder="Search"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"
+           enterkeyhint="search"/>
+    <button class="btn it-docs-search-submit" type="submit" title="Search">
+      <svg class="icon it-docs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M21.9 21.1 16 15.3c1.3-1.5 2-3.4 2-5.3 0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8c1.9 0 3.8-.7 5.3-2l5.8 5.9.8-.8zM10 17c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+</svg>
+      <span class="visually-hidden">Search</span>
+    </button>
+  </form>
+</div><a id="source_link" class="it-docs-source-link" href="https://github.com/italia/eudi-wallet-it-docs" title="Source repository" target="_blank" rel="noopener">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.4-2.1.7-2.1-1.3-4.3-4.3-5.2-2.6-.7-5.5.3-6.4 2.1zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5 21.3 0 42.8 2.9 62.8 8.5 0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"/>
+  </svg>
+  
+  <span class="visually-hidden">Source repository</span>
+</a><div class="nav-item dropdown it-docs-brightness-dropdown">
+  <button type="button"
+          id="it-docs-brightness-toggle"
+          class="it-docs-brightness-toggle nav-link dropdown-toggle"
+          aria-controls="it-docs-brightness-menu"
+          data-bs-toggle="dropdown"
+          aria-haspopup="menu"
+          aria-expanded="false"
+          title="Content brightness">
+    <span id="it-docs-brightness-active-hint" class="visually-hidden">
+      Active brightness:
+    </span>
+    <svg class="icon it-docs-brightness-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M12 7.75a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0-8.5zM10.5 1.25h3v4.75h-3V1.25zm0 17h3v4.75h-3V18.25zM1.25 10.5h4.75v3h-4.75v-3zm17 0h4.75v3H18.25v-3zM5.1 5.1h3.2v3.2H5.1V5.1zm10.7 0h3.2v3.2h-3.2V5.1zM5.1 15.7h3.2v3.2H5.1v-3.2zm10.7 0h3.2v3.2h-3.2v-3.2z"/>
+</svg>
+    <span class="visually-hidden" id="it-docs-brightness-current-label">Light</span>
+    <svg class="icon ms-1 it-docs-brightness-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+  </button>
+  <div id="it-docs-brightness-menu" class="dropdown-menu dropdown-menu-end">
+    <div class="row">
+      <div class="col-12">
+        <div class="link-list-wrapper">
+          <ul class="link-list" role="menu" aria-labelledby="it-docs-brightness-toggle">
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option active"
+                      data-it-docs-brightness="light"
+                      role="menuitemradio"
+                      aria-checked="true">
+                <span>Light</span>
+              </button>
+            </li>
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option"
+                      data-it-docs-brightness="middle"
+                      role="menuitemradio"
+                      aria-checked="false">
+                <span>Middle</span>
+              </button>
+            </li>
+            <li>
+              <button type="button"
+                      class="dropdown-item list-item it-docs-brightness-option"
+                      data-it-docs-brightness="black"
+                      role="menuitemradio"
+                      aria-checked="false">
+                <span>Black</span>
+              </button>
+            </li>
+          </ul>
         </div>
-    </nav>
+      </div>
+    </div>
+  </div>
 </div>
-
-    
-      <div class="sphinxsidebar" role="navigation" aria-label="Main">
-        <div class="sphinxsidebarwrapper"><p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
+          <div class="nav-item dropdown it-header-lang-dropdown">
+            <button type="button"
+                    id="languagesDropButton"
+                    class="nav-link dropdown-toggle"
+                    aria-controls="language-menu"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="menu"
+                    aria-expanded="false">
+              <span id="header-lang-active-hint" class="visually-hidden">Active language:</span>
+              <span class="it-header-lang-label" aria-hidden="true">EN</span>
+              <svg class="icon icon-sm ms-1 it-header-lang-chevron" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+            </button>
+            <div id="language-menu" class="dropdown-menu dropdown-menu-end">
+              <div class="row">
+                <div class="col-12">
+                  <div class="link-list-wrapper">
+                    <ul class="link-list" role="menu" aria-labelledby="languagesDropButton">
+                      <li>
+                        <a class="dropdown-item list-item it-lang-option"
+                           href="../it/functionalities.html"
+                           data-lang="it"
+                           role="menuitemradio"
+                           aria-checked="false"
+                           >
+                          <span lang="it">Italiano</span>
+                        </a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item list-item it-lang-option active"
+                           href="#"
+                           data-lang="en"
+                           role="menuitemradio"
+                           aria-checked="true"
+                           aria-current="true">
+                          <span lang="en">English</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="it-header-center-content-wrapper it-docs-header-compact">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="it-header-center-content d-flex align-items-center justify-content-between flex-nowrap">
+            <div class="it-brand-wrapper it-docs-brand-wrapper">
+              <a href="index.html"
+                 class="it-docs-brand-link text-decoration-none"
+                 title="Home">
+                <h2 class="it-brand-title it-docs-header-site-title" id="header-site-title">IT-Wallet Technical Specifications</h2>
+              </a>
+            </div>
+            <button class="custom-navbar-toggler d-lg-none it-docs-sidebar-toggler"
+                    type="button"
+                    data-it-docs-nav-toggle
+                    data-it-docs-nav-target="#itDocsPrimaryNav"
+                    aria-controls="itDocsPrimaryNav"
+                    aria-expanded="false"
+                    aria-label="Open navigation">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M22 5v1H2V5h20zM2 12.5h20v-1H2v1zM2 19h20v-1H2v1z"/>
+</svg>
+              <span>Menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container it-docs-header-mobile-tools-container d-lg-none">
+      <div class="it-docs-header-mobile-tools"><div class="it-docs-searchbox--mobile it-docs-searchbox" role="search">
+  <form class="it-docs-search-form" action="search.html" method="get">
+    <label class="visually-hidden" for="it-docs-search-input-mobile">Search</label>
+    <input id="it-docs-search-input-mobile"
+           class="form-control it-docs-search-input"
+           type="search"
+           name="q"
+           placeholder="Search"
+           autocomplete="off"
+           autocorrect="off"
+           autocapitalize="off"
+           spellcheck="false"
+           enterkeyhint="search"/>
+    <button class="btn it-docs-search-submit" type="submit" title="Search">
+      <svg class="icon it-docs-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M21.9 21.1 16 15.3c1.3-1.5 2-3.4 2-5.3 0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8c1.9 0 3.8-.7 5.3-2l5.8 5.9.8-.8zM10 17c-3.9 0-7-3.1-7-7s3.1-7 7-7 7 3.1 7 7-3.1 7-7 7z"/>
+</svg>
+      <span class="visually-hidden">Search</span>
+    </button>
+  </form>
+</div>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="it-docs-layout">
+  <div class="it-docs-container">
+    <div class="row it-docs-row">
+      <aside class="col-12 col-lg-3 it-docs-sidebar-col" aria-label="Primary navigation">
+        <div class="navbar-collapsable it-docs-primary-nav-collapsable" id="itDocsPrimaryNav">
+          <div class="overlay d-lg-none"></div>
+          <div class="close-div d-lg-none">
+            <button class="btn close-menu" type="button" aria-label="Close navigation">
+              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m12.7 12 3.7 3.6-.8.8-3.6-3.7-3.6 3.7-.8-.8 3.7-3.6-3.7-3.6.8-.8 3.6 3.7 3.6-3.7.8.8-3.7 3.6z"/>
+</svg>
+            </button>
+          </div>
+          <div class="menu-wrapper it-docs-menu-scroll"><div class="sidebar-wrapper it-line-right-side it-docs-primary-nav">
+  <div class="sidebar-linklist-wrapper">
+    <div class="link-list-wrapper">
+      <h2 class="it-docs-nav-section-label">Table of contents</h2>
+      
+      <div class="it-docs-sphinx-toc">
+        <p class="caption" role="heading"><span class="caption-text">Table of Contents</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="introduction.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="brand-identity.html">2. Brand Identity</a></li>
@@ -152,14 +283,22 @@
 <li class="toctree-l1"><a class="reference internal" href="appendix.html">20. Appendix</a></li>
 </ul>
 
-        </div>
       </div>
+    </div>
+  </div>
+</div>
+          </div>
+        </div>
+      </aside>
 
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+      <div class="col-12 col-lg-6 it-docs-main-col">
+        <main id="main-content" class="it-docs-main it-page-sections-container" role="main" tabindex="-1">
+          <noscript>
+            <p class="it-docs-noscript alert alert-warning" role="alert">
+              JavaScript is required for navigation menus and some interactive features.
+            </p>
+          </noscript>
+          <div class="body">
             
   <section id="user-experience-design">
 <h1><span class="section-number">5. </span>User Experience Design<a class="headerlink" href="#user-experience-design" title="Link to this heading">¶</a></h1>
@@ -189,7 +328,7 @@
 <p>To ensure a correct and consistent implementation, Primary Actors:</p>
 <ul class="simple">
 <li><p>MUST use the <a class="reference internal" href="official-resources.html#official-resources"><span class="std std-ref">Official Resources</span></a> and MUST comply with all related usage specifications provided;</p></li>
-<li><p>MAY choose from the available configurations provided. Primary Actors MUST ensure the correct use of atomic components, such as the <a class="reference internal" href="#engagement-button">Engagement Button</a> or the <a class="reference internal" href="#authentication-button">Authentication Button</a> ;</p></li>
+<li><p>MAY choose from the available configurations provided. Primary Actors MUST ensure the correct use of atomic components, such as the <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> or the <a class="reference internal" href="#authentication-button"><span class="std std-ref">Authentication Button</span></a> ;</p></li>
 <li><p>MUST keep used resources up to date, in line with the latest available version of the <a class="reference internal" href="official-resources.html#official-resources"><span class="std std-ref">Official Resources</span></a>.</p></li>
 </ul>
 </section>
@@ -207,7 +346,7 @@
 <li><p>The User authorizes the operation using the unlock method previously set;</p></li>
 <li><p>The User receives confirmation of the successful activation of the Wallet Instance.</p></li>
 </ul>
-<p>The Wallet Provider MUST allow the User to remove the PID issued during the activation phase. In addition, the PID Provider SHOULD allow the User to revoke the issued PID through a specific Touchpoint. The Wallet Provider MUST allow the User to always have the option to request the deactivation of their Wallet Instance, even in the absence of the device on which it was installed. For further details, please refer to the <a class="reference internal" href="#deactivation-of-the-wallet-instance">Deactivation of the Wallet Instance</a> and <a class="reference internal" href="#management-of-electronic-attestations">Management of Electronic Attestations</a> sections.</p>
+<p>The Wallet Provider MUST allow the User to remove the PID issued during the activation phase. In addition, the PID Provider SHOULD allow the User to revoke the issued PID through a specific Touchpoint. The Wallet Provider MUST allow the User to always have the option to request the deactivation of their Wallet Instance, even in the absence of the device on which it was installed. For further details, please refer to the <a class="reference internal" href="#deactivation-of-the-wallet-instance"><span class="std std-ref">Deactivation of the Wallet Instance</span></a> and <a class="reference internal" href="#management-of-electronic-attestations"><span class="std std-ref">Management of Electronic Attestations</span></a> sections.</p>
 <p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the <a class="reference internal" href="#error-management"><span class="std std-ref">Error Management</span></a> section.</p>
 <p>The flow is shown below with illustrative wireframes.</p>
 <figure class="align-center" id="id98">
@@ -259,7 +398,7 @@
 <p>Depending on the User's specific needs, the type of Electronic Attestation of Attributes, and the offerings available from the Wallet Provider, the Electronic Attestation of Attributes Provider, and the Authentic Source, the request of Electronic Attestations of Attributes can occur in two ways:</p>
 <ul class="simple">
 <li><p><strong>from the Wallet Instance Catalog</strong>: the User explores the list of Electronic Attestations of Attributes provided by the Wallet Solution, selects the one of interest, and initiates the request process, concluding with the issuance of the Electronic Attestation of Attributes in the Wallet Instance. This pathway is available for Credential types eligible for public discovery as determined by the Supervisory body policies during the onboarding process (see <a class="reference internal" href="registry.html#digital-credentials-catalog"><span class="std std-ref">Digital Credentials Catalog</span></a>).</p></li>
-<li><p><strong>from a Touchpoint of the Authentic Source</strong> (or the Electronic Attestation of Attributes Provider if it coincides with the Authentic Source; (see <a class="reference internal" href="credential-issuance-low-level.html#credential-offer-flow"><span class="std std-ref">Credential Offer Flow</span></a> ): the User interacts with the digital service of the Authentic Source, allowing them to get a specific Electronic Attestation of Attributes in their Wallet Instance via an <a class="reference internal" href="#engagement-button">Engagement Button</a>.</p></li>
+<li><p><strong>from a Touchpoint of the Authentic Source</strong> (or the Electronic Attestation of Attributes Provider if it coincides with the Authentic Source; (see <a class="reference internal" href="credential-issuance-low-level.html#credential-offer-flow"><span class="std std-ref">Credential Offer Flow</span></a> ): the User interacts with the digital service of the Authentic Source, allowing them to get a specific Electronic Attestation of Attributes in their Wallet Instance via an <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>.</p></li>
 </ul>
 <p>Although the methods for initiating the request are different, the issuance flows share a similar structure and process.</p>
 <section id="issuance-from-the-wallet-instance-catalog">
@@ -291,7 +430,7 @@
 <strong>Text:</strong> The digital version of [Document name] is available only to those who already hold the physical one. Please, make sure to have already obtained the corresponding physical document. For more details, [read more information] (URL).</p>
 </div>
 <p>For further information, please refer to the section <a class="reference internal" href="registry.html#authentic-source-registry"><span class="std std-ref">Authentic Source Registry</span></a> (see <code class="docutils literal notranslate"><span class="pre">data_capabilities.user_information</span></code> parameter).</p>
-<p>The Wallet Provider MUST allow the User to remove an Electronic Attestation of Attributes through their Wallet Instance at any moment. In case of absence of the device where the Wallet Instance was activated, the Wallet Provider MUST allow the User to deactivate the entire Wallet Instance through a specific Touchpoint. In addition, the Electronic Attestation of Attributes Providers SHOULD allow the User to revoke the issued Digital Credentials through specific Touchpoints. For more details, please refer to the <a class="reference internal" href="#deactivation-of-the-wallet-instance">Deactivation of the Wallet Instance</a> and <a class="reference internal" href="#management-of-electronic-attestations">Management of Electronic Attestations</a> sections.</p>
+<p>The Wallet Provider MUST allow the User to remove an Electronic Attestation of Attributes through their Wallet Instance at any moment. In case of absence of the device where the Wallet Instance was activated, the Wallet Provider MUST allow the User to deactivate the entire Wallet Instance through a specific Touchpoint. In addition, the Electronic Attestation of Attributes Providers SHOULD allow the User to revoke the issued Digital Credentials through specific Touchpoints. For more details, please refer to the <a class="reference internal" href="#deactivation-of-the-wallet-instance"><span class="std std-ref">Deactivation of the Wallet Instance</span></a> and <a class="reference internal" href="#management-of-electronic-attestations"><span class="std std-ref">Management of Electronic Attestations</span></a> sections.</p>
 <p>In the event of communication issues between the systems of the Electronic Attestation of Attributes Provider and the Authentic Source, or if administrative or technical processes prevent the immediate issuance of the Electronic Attestation of Attributes, the actors involved MAY support a deferred issuance process. In this case the Wallet Provider MUST guarantee that:</p>
 <ul class="simple">
 <li><p>Upon reaching the final step of the process, the User visualizes a message prompting them to wait until the Electronic Attestation of Attributes can be issued.</p></li>
@@ -311,7 +450,7 @@
 <h3><span class="section-number">5.4.2. </span>Issuance from a Touchpoint of the Authentic Source<a class="headerlink" href="#issuance-from-a-touchpoint-of-the-authentic-source" title="Link to this heading">¶</a></h3>
 <p>Below are illustrated the User Experience requirements for the issuance of an Electronic Attribute Attestation from a Touchpoint of the Authentic Source (also known as <a class="reference internal" href="credential-issuance-low-level.html#credential-offer-flow"><span class="std std-ref">Credential Offer Flow</span></a> that the Authentic Source MUST guarantee through their Touchpoint:</p>
 <ul class="simple">
-<li><p>The User interacts with the <a class="reference internal" href="#engagement-button">Engagement Button</a> clearly displayed in the Touchpoint interface;</p></li>
+<li><p>The User interacts with the <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> clearly displayed in the Touchpoint interface;</p></li>
 <li><p>The User selects the Wallet Solution with which to proceed, through an interface that MUST follow the directions and functionalities described for the <em>Selection Page</em> in the <a class="reference internal" href="#authentication"><span class="std std-ref">Authentication</span></a> section;</p></li>
 <li><p>(<em>cross-device only</em>) the User scans the QR code that invokes the opening of their chosen Wallet Instance, through an interface that MUST follow the directions and functionalities described for the <em>QR Code Page</em> in the <a class="reference internal" href="#authentication"><span class="std std-ref">Authentication</span></a> section; alternatively the User can exit the flow.</p></li>
 <li><p>The User accesses their Wallet Instance using the unlock method previously set;</p></li>
@@ -330,7 +469,7 @@
 <p><span class="caption-number">Fig. 5.12 </span><span class="caption-text">Example of the User Experience during the issuance of an Electronic Attestation of Attributes from the Authentic Source.</span><a class="headerlink" href="#id107" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>Following is represented for illustrative purposes the page with the <a class="reference internal" href="#engagement-button">Engagement Button</a>, together with the Selection Page and the QR Code Page with the interface elements and texts updated according to the <a class="reference internal" href="#issuance-from-a-touchpoint-of-the-authentic-source">Issuance from a Touchpoint of the Authentic Source</a> flow.</p>
+<p>Following is represented for illustrative purposes the page with the <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>, together with the Selection Page and the QR Code Page with the interface elements and texts updated according to the <a class="reference internal" href="#issuance-from-a-touchpoint-of-the-authentic-source"><span class="std std-ref">Issuance from a Touchpoint of the Authentic Source</span></a> flow.</p>
 <figure class="align-center" id="id114">
 <a class="reference internal image-reference" href="_images/Credential-offer-ENG.svg"><img alt="Illustrative page with Engagement Button, Selection page and QR code page for the credential offer" src="_images/Credential-offer-ENG.svg" style="width: 100%;" /></a>
 <figcaption>
@@ -458,7 +597,7 @@
 <li><p>MUST provide the logo with a maximum file size of 150 KB.</p></li>
 </ul>
 </li>
-<li><p>MAY define a distinctive <strong>EAA color</strong> to be associated with a specific EAA via the <code class="docutils literal notranslate"><span class="pre">data_capabilities.background_color</span></code> parameter. In particular, the Authentic Source:</p>
+<li><p>MAY define a distinctive <strong>EAA color</strong> to be associated with a specific EAA via the <code class="docutils literal notranslate"><span class="pre">data_capabilities.background_color</span></code> parameter. The aim is to characterise the EAA, making it recognisable to the User, particularly in cases where the intention is to give a new EAA a strong identity or to maintain consistency with a corresponding physical document (e.g., consider the italian driving licence and its distinctive pink colour). In particular, the Authentic Source:</p>
 <ul>
 <li><p>MUST provide the background color only using one of the following color modes: HEX, HSB, RGB, sRGB, HSL, or HSV.</p></li>
 </ul>
@@ -472,7 +611,7 @@
 <li><p>Level II Attributes (optional);</p></li>
 </ul>
 </li>
-<li><p>MUST not exceed two levels of nesting in the organisation of attributes;</p></li>
+<li><p>MUST NOT exceed two levels of nesting in the organisation of attributes;</p></li>
 <li><p>SHOULD NOT exceed a maximum of 15 Attributes per level;</p></li>
 <li><p>SHOULD NOT exceed a maximum of 85 characters for Attribute values;</p></li>
 <li><p>SHOULD NOT exceed a maximum of 181 characters for the value of each description in the case of Level II Attributes with a “list of descriptions”.</p></li>
@@ -527,6 +666,7 @@
 <li><p><strong>Proximity Presentation</strong>: the User presents the PID and/or EAA data through the Wallet Instance, directly to a Verifier or to a device designated for in-person verification.</p></li>
 <li><p><strong>Remote Presentation</strong>: the User presents the PID and/or EAA data through the Wallet Instance, to a Relying Party configured for online verification, for instance, to Authenticate and access the services offered.</p></li>
 </ul>
+<p>Regardless of the type of presentation, the Wallet Provider MUST allow the Wallet Instance to inform the User of the identity of the Relying Party. In case of a Relying Party Intermediary, the User MUST be informed of the intermediary’s involvement during the presentation request phase. The identity of the primary Relying Party MUST always be visible to the User and MUST NOT be replaced by that of the Relying Party Intermediary.</p>
 <section id="proximity-presentation">
 <h3><span class="section-number">5.5.1. </span>Proximity Presentation<a class="headerlink" href="#proximity-presentation" title="Link to this heading">¶</a></h3>
 <p>Proximity presentation allows the User to present the PID and/or EAA data via their Wallet Instance, using one of two methods:</p>
@@ -544,7 +684,7 @@
 <li><p>The User authorizes the operation using the unlock method previously set;</p></li>
 <li><p>The User receives confirmation of the successful presentation.</p></li>
 </ul>
-<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the <a class="reference internal" href="#error-management">Error Management</a> section.</p>
+<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the <a class="reference internal" href="#error-management"><span class="std std-ref">Error Management</span></a> section.</p>
 <p><strong>Unsupervised Mode</strong></p>
 <ul class="simple">
 <li><p>The User accesses their Wallet Instance using the unlock method previously set;</p></li>
@@ -565,7 +705,7 @@
 </section>
 <section id="remote-presentation">
 <h3><span class="section-number">5.5.2. </span>Remote Presentation<a class="headerlink" href="#remote-presentation" title="Link to this heading">¶</a></h3>
-<p>Remote presentation allows the User to present the PID and/or EAA data by interacting with a Relying Party's Touchpoint through the designated <a class="reference internal" href="#engagement-button">Engagement Button</a>.</p>
+<p>Remote presentation allows the User to present the PID and/or EAA data by interacting with a Relying Party's Touchpoint through the designated <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>.</p>
 <p>This presentation can occur in two different modes, depending on the type of device used to access the service:</p>
 <ul class="simple">
 <li><p><strong>Same-device mode</strong>: when the User accesses an online digital service integrated with a special verification system (<a class="reference internal" href="relying-party-instance.html#web-relying-party-instance"><span class="std std-ref">Web Relying Party Instance</span></a>) using the same device which the Wallet Instance is installed on;</p></li>
@@ -574,7 +714,7 @@
 <p>Below are the User Experience requirements related to both methods that the Wallet Provider MUST guarantee via their Wallet Solution.</p>
 <p><strong>Same-Device Mode</strong></p>
 <ul class="simple">
-<li><p>The User clicks the Engagement Button provided on the Relying Party's Touchpoint;</p></li>
+<li><p>The User clicks the <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> provided on the Relying Party's Touchpoint;</p></li>
 <li><p>The User selects the Wallet Solution to proceed with, through an interface that MUST follow the instructions and functionalities provided for the Selection Page described in the <a class="reference internal" href="#authentication"><span class="std std-ref">Authentication</span></a> section;</p></li>
 <li><p>The User accesses their Wallet Instance using the unlock method previously set;</p></li>
 <li><p>The User reviews the requested PID and/or EAA data, the name of the requesting Relying Party, and any related policy. The User decides whether to present any non-mandatory PID and/or EAA data (Selective Disclosure). The User provides consent to proceed or cancels the operation;</p></li>
@@ -582,7 +722,7 @@
 <li><p>The User receives confirmation of the successful presentation within the Wallet Instance;</p></li>
 <li><p>The User returns to the Relying Party's Touchpoint, where they see confirmation of the completed presentation.</p></li>
 </ul>
-<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the <a class="reference internal" href="#error-management">Error Management</a> section.</p>
+<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the <a class="reference internal" href="#error-management"><span class="std std-ref">Error Management</span></a> section.</p>
 <p>The flow is shown below with illustrative wireframes.</p>
 <figure class="align-center" id="id122">
 <a class="reference internal image-reference" href="_images/Remote-presentation-same-device.svg"><img alt="Example of User Experience in remote, same-device presentation" src="_images/Remote-presentation-same-device.svg" style="width: 100%;" /></a>
@@ -592,7 +732,7 @@
 </figure>
 <p><strong>Cross-Device Mode</strong></p>
 <ul class="simple">
-<li><p>The User clicks the Engagement Button provided on the Touchpoint of the Relying Party while accessing the service from a different device than the one where the Wallet Instance is installed;</p></li>
+<li><p>The User clicks the <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a> provided on the Touchpoint of the Relying Party while accessing the service from a different device than the one where the Wallet Instance is installed;</p></li>
 <li><p>The User selects the Wallet Solution to proceed with, through an interface that MUST follow the instructions and functionalities provided for the Selection Page described in the <a class="reference internal" href="#authentication"><span class="std std-ref">Authentication</span></a> section;</p></li>
 <li><p>The User scans the QR Code provided by the Relying Party using their Wallet Instance or the camera on their device; the QR code interface MUST follow the instructions and functionalities provided for the QR Code Page described in the <a class="reference internal" href="#authentication"><span class="std std-ref">Authentication</span></a> section;</p></li>
 <li><p>The User reviews the requested PID and/or EAA data, the name of the requesting Relying Party, and any related policy. The User decides whether to present any non-mandatory personal data (Selective Disclosure). The User provides consent to proceed or cancels the operation.</p></li>
@@ -600,7 +740,7 @@
 <li><p>The User receives confirmation of the successful presentation within the Wallet Instance;</p></li>
 <li><p>The User returns to the Relying Party's Touchpoint and views confirmation of the completed presentation.</p></li>
 </ul>
-<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the <a class="reference internal" href="#error-management">Error Management</a> section.</p>
+<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For further details, please refer to the <a class="reference internal" href="#error-management"><span class="std std-ref">Error Management</span></a> section.</p>
 <p>The flow is shown below with illustrative wireframes.</p>
 <figure class="align-center" id="id125">
 <a class="reference internal image-reference" href="_images/Remote-presentation-cross-device.svg"><img alt="Example of User Experience in remote, cross-device presentation" src="_images/Remote-presentation-cross-device.svg" style="width: 100%;" /></a>
@@ -608,7 +748,7 @@
 <p><span class="caption-number">Fig. 5.30 </span><span class="caption-text">Example of User Experience in remote, cross-device presentation.</span><a class="headerlink" href="#id125" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>Following is represented for illustrative purposes the page with the <a class="reference internal" href="#engagement-button">Engagement Button</a>, together with the Selection Page, the QR Code Page and the Thank You Page with the interface elements and texts updated according to the <a class="reference internal" href="#remote-presentation">Remote Presentation</a> flow.</p>
+<p>Following is represented for illustrative purposes the page with the <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>, together with the Selection Page, the QR Code Page and the Thank You Page with the interface elements and texts updated according to the <a class="reference internal" href="#remote-presentation"><span class="std std-ref">Remote Presentation</span></a> flow.</p>
 <figure class="align-center" id="id129">
 <a class="reference internal image-reference" href="_images/remote-presentation.svg"><img alt="Illustrative page with Engagement Button, Selection page, QR code page, Thank you page for the remote presentation" src="_images/remote-presentation.svg" style="width: 100%;" /></a>
 <figcaption>
@@ -618,8 +758,8 @@
 <section id="authentication">
 <h4><span class="section-number">5.5.2.1. </span>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">¶</a></h4>
 <p>Authentication is a specific use case of remote presentation that allows the User to securely access services provided by both public and private Relying Parties. This is achieved by presenting the PID and, if necessary, a set of Attributes contained in the obtained Electronic Attestations of Attributes. This process ensures that the User retains control over their data, including the ability to present only the information strictly necessary for verification by Relying Parties.</p>
-<p>The Authentication process can be carried out using both the same-device and cross-device modes described above. For the User Experience functional requirements that MUST be addressed, please refer to the functional requirements for <a class="reference internal" href="#remote-presentation">remote presentation</a> in same-device and cross-device modes.</p>
-<p>From a User Experience perspective, the Authentication process differs from the Presentation process only in how it is initiated, which is through a dedicated <a class="reference internal" href="#authentication-button">Authentication Button</a>.</p>
+<p>The Authentication process can be carried out using both the same-device and cross-device modes described above. For the User Experience functional requirements that MUST be addressed, please refer to the functional requirements for <a class="reference internal" href="#remote-presentation"><span class="std std-ref">remote presentation</span></a> in same-device and cross-device modes.</p>
+<p>From a User Experience perspective, the Authentication process differs from the Presentation process only in how it is initiated, which is through a dedicated <a class="reference internal" href="#authentication-button"><span class="std std-ref">Authentication Button</span></a>.</p>
 <p>To ensure a consistent and seamless Authentication process across all Relying Parties, each Relying Party MUST follow the visual and User Experience requirements outlined below, together with compliance with [REF_ACCESSIBILITY] and, in the case of public entities, with [GL_DESIGN].</p>
 <p>Both flows are shown below with illustrative wireframes.</p>
 <figure class="align-center" id="id132">
@@ -661,7 +801,7 @@
 <p><span class="caption-number">Fig. 5.45 </span><span class="caption-text">Layout Model of Discovery Page in grid</span><a class="headerlink" href="#id140" title="Link to this image">¶</a></p>
 </figcaption>
 </figure>
-<p>Alternatively, the Relying Party MAY maintain its own Discovery Page but MUST integrate the Authentication Button as specified in the <a class="reference internal" href="#authentication-button">Authentication Button</a> section.</p>
+<p>Alternatively, the Relying Party MAY maintain its own Discovery Page but MUST integrate the Authentication Button as specified in the <a class="reference internal" href="#authentication-button"><span class="std std-ref">Authentication Button</span></a> section.</p>
 <p>The Relying Party implementing the page:</p>
 <ul class="simple">
 <li><p>MUST display all available Digital Identity Authentication methods, including the IT-Wallet System Authentication through the Authentication Button;</p></li>
@@ -752,7 +892,7 @@
 </ul>
 <section id="authentication-button">
 <h5><span class="section-number">5.5.2.1.1. </span>Authentication Button<a class="headerlink" href="#authentication-button" title="Link to this heading">¶</a></h5>
-<p>The Authentication Button &quot;Login with IT-Wallet&quot; serves as an <a class="reference internal" href="#engagement-button">Engagement Button</a>, providing Users with a standardized way to Authenticate themselves using their digital Wallet.</p>
+<p>The Authentication Button &quot;Login with IT-Wallet&quot; serves as an <a class="reference internal" href="#engagement-button"><span class="std std-ref">Engagement Button</span></a>, providing Users with a standardized way to Authenticate themselves using their digital Wallet.</p>
 <p>Relying Parties MUST make the Authentication Button available within the Discovery Page of their Technical Solutions to allow the User to get authenticated into their services using the Wallet Instance under their control.</p>
 <p>The Authentication Button has the following requirements:</p>
 <ul class="simple">
@@ -927,8 +1067,8 @@ For further information on the Authentication button refer to the Brand Manual, 
 <p>Below are the functional requirements supporting the User Experience regarding the update of the Electronic Attestation that the Electronic Attestation Provider MUST guarantee through the Wallet Solution:</p>
 <ul class="simple">
 <li><p>The User sees in the Electronic Attestation Preview View that its status is not valid;</p></li>
-<li><p>The User sees a message in the Detail View informing them of the new status of the Electronic Attestation and CAN find out more information;</p></li>
-<li><p>The User sees any additional information on the requirements and/or limitations relating to the status of the Electronic Attestation of Attributes and CAN close the message or proceed with any action requested by the Electronic Attestation Provider;</p></li>
+<li><p>The User sees a message in the Detail View informing them of the new status of the Electronic Attestation and MAY find out more information;</p></li>
+<li><p>The User sees any additional information on the requirements and/or limitations relating to the status of the Electronic Attestation of Attributes and MAY close the message or proceed with any action requested by the Electronic Attestation Provider;</p></li>
 <li><p>The User sees specific Call To Action buttons in the Detail View to delete the Electronic Attestation or update it if no longer valid.</p></li>
 </ul>
 <p>The flow is shown below with illustrative wireframes.</p>
@@ -1034,9 +1174,9 @@ For further information on the Authentication button refer to the Brand Manual, 
 <li><p>The User receives confirmation of successful deactivation;</p></li>
 <li><p>The User is notified that the Wallet Instance is inactive when logging in again.</p></li>
 </ul>
-<p>The User has the ability to reactivate the Wallet Instance by re-downloading the app from the app store (if uninstalled) and/or by following the activation process again. For further details, please refer to the <a class="reference internal" href="#activation-of-the-wallet-instance">Activation of the Wallet Instance</a> section.</p>
-<p>Once the Wallet Instance is reactivated, Electronic Attestations of Attributes can be re-obtained by starting the issuance or restore process again. For more details, please refer to sections <a class="reference internal" href="#issuance-of-electronic-attestations-of-attributes">Issuance of Electronic Attestations of Attributes</a> and <a class="reference internal" href="#backup-and-restore-of-electronic-attestation-of-attributes">Backup and Restore of Electronic Attestation of Attributes</a>.</p>
-<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For more details, please refer to the <a class="reference internal" href="#error-management">Error Management</a> section.</p>
+<p>The User has the ability to reactivate the Wallet Instance by re-downloading the app from the app store (if uninstalled) and/or by following the activation process again. For further details, please refer to the <a class="reference internal" href="#activation-of-the-wallet-instance"><span class="std std-ref">Activation of the Wallet Instance</span></a> section.</p>
+<p>Once the Wallet Instance is reactivated, Electronic Attestations of Attributes can be re-obtained by starting the issuance or restore process again. For more details, please refer to sections <a class="reference internal" href="#issuance-of-electronic-attestations-of-attributes"><span class="std std-ref">Issuance of Electronic Attestations of Attributes</span></a> and <a class="reference internal" href="#backup-and-restore-of-electronic-attestation-of-attributes"><span class="std std-ref">Backup and Restore of Electronic Attestation of Attributes</span></a>.</p>
+<p>In case of errors using the Wallet Instance, the Wallet Provider MUST guarantee that the User receives consistent messages that inform them and guide them toward resolving the issue. For more details, please refer to the <a class="reference internal" href="#error-management"><span class="std std-ref">Error Management</span></a> section.</p>
 <p>The flow is shown below with illustrative wireframes.</p>
 <figure class="align-default" id="id167">
 <a class="reference internal image-reference" href="_images/wallet-deactivation.svg"><img alt="Example of User Experience in Deactivating a Wallet Instance" src="_images/wallet-deactivation.svg" style="width: 100%;" /></a>
@@ -1251,19 +1391,58 @@ For further information on the Authentication button refer to the Brand Manual, 
 </section>
 
 
-            <div class="clearer"></div>
           </div>
-        </div>
+          <nav class="it-docs-pager d-flex flex-wrap justify-content-between gap-3 mt-5" aria-label="Page navigation">
+            <div class="it-docs-pager-prev">
+              <a class="btn btn-outline-primary" href="onboarding-high-level.html">
+                <svg class="icon icon-sm me-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M14.6 17.2 9 11.6 14.6 6l.8.7-4.9 4.9 4.9 4.9z"/>
+</svg>
+                <span>4. Onboarding System</span>
+              </a>
+            </div>
+            <div class="it-docs-pager-next ms-auto">
+              <a class="btn btn-primary" href="trust-infrastructure.html">
+                <span>6. The Infrastructure of Trust</span>
+                <svg class="icon icon-sm ms-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m9.8 17.2-.8-.7 4.9-4.9L9 6.7l.8-.7 5.6 5.6z"/>
+</svg>
+              </a>
+            </div>
+          </nav>
+        </main>
       </div>
-    
-        <div id="show_right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&lt;</span><span>Page contents</span></a></p>
-        </div>
 
-        <div id="right_sidebar">
-            <p><a class="toggle_right_sidebar" href="#"><span class="icon">&gt;</span><span>Page contents:</span></a></p>
-            <div class="page_toc">
-                <ul>
+      <aside class="col-12 col-lg-3 it-docs-navscroll-col" aria-label="Secondary navigation">
+        <div class="it-docs-navscroll-sticky it-docs-menu-scroll"><nav class="navbar it-navscroll-wrapper navbar-expand-lg it-top-navscroll it-left-side it-docs-navscroll"
+     data-bs-navscroll
+     aria-label="Page contents">
+  <button class="custom-navbar-toggler"
+          type="button"
+          data-it-docs-nav-toggle
+          data-it-docs-nav-target="#itDocsNavscroll"
+          aria-controls="itDocsNavscroll"
+          aria-expanded="false"
+          aria-label="Open page contents">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M11.6 15.4 6 9.8l.7-.8 4.9 4.9L16.5 9l.7.8z"/>
+</svg>
+    <span>Page contents</span>
+  </button>
+  <div class="navbar-collapsable it-docs-navscroll-panel" id="itDocsNavscroll">
+    <div class="overlay"></div>
+    <div class="close-div">
+      <button class="btn close-menu" type="button" aria-label="Close page contents">
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="m12.7 12 3.7 3.6-.8.8-3.6-3.7-3.6 3.7-.8-.8 3.7-3.6-3.7-3.6.8-.8 3.6 3.7 3.6-3.7.8.8-3.7 3.6z"/>
+</svg>
+      </button>
+    </div>
+    <div class="menu-wrapper it-docs-menu-scroll">
+      <div class="link-list-wrapper">
+        <h2 class="it-docs-nav-section-label">On this page</h2>
+        <div class="it-docs-local-toc">
+          <ul>
 <li><a class="reference internal" href="#">5. User Experience Design</a><ul>
 <li><a class="reference internal" href="#design-principles">5.1. Design Principles</a></li>
 <li><a class="reference internal" href="#functionalities-overview">5.2. Functionalities Overview</a></li>
@@ -1315,35 +1494,52 @@ For further information on the Authentication button refer to the Brand Manual, 
 </li>
 </ul>
 
-            </div>
         </div>
-    
-
-      <div class="clearer"></div>
+      </div>
     </div>
-    <div class="button_nav_wrapper">
-        <div class="button_nav">
-            <div class="left">
-                
-                <a href="onboarding-high-level.html">
-                    <span class="icon">&lt;</span><span><span class="section-number">4. </span>Onboarding System</span></a>
-                
-            </div>
-
-            <div class="right">
-                
-                    <a href="trust-infrastructure.html"><span><span class="section-number">6. </span>The Infrastructure of Trust</span><span class="icon">&gt;</span></a>
-                
-            </div>
+  </div>
+</nav>
         </div>
+      </aside>
     </div>
-
-
-    <div class="footer" role="contentinfo">
-      Last updated on 17/06/2026.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.4.5.
+  </div>
+</div>
+<footer id="page-footer" class="it-docs-footer" role="contentinfo" tabindex="-1">
+  <div class="container">
+    <div class="it-docs-footer-inner"><nav id="footer-partners-nav"
+     class="it-docs-footer-partners"
+     aria-label="Institutional partners">
+  <ul class="it-docs-footer-partners-list">
+    <li>
+      <a href="https://innovazione.gov.it/"
+         class="it-docs-footer-partner-link it-docs-footer-partner-link--dtd"
+         target="_blank"
+         rel="noopener">
+        <img src="_static/img/footer/logo-dtd.svg"
+             alt="Department for Digital Transformation"
+             width="120"
+             height="32"
+             loading="lazy"
+             decoding="async">
+      </a>
+    </li>
+  </ul>
+</nav><div class="it-docs-footer-meta">
+        <p class="it-docs-footer-details"><span class="it-docs-footer-detail">Version 1.4.5</span><span class="it-docs-footer-detail">Last updated 22/07/2026</span><span class="it-docs-footer-detail">
+            Sphinx 7.4.5
+          </span></p>
+      </div>
     </div>
-
-<p id="theme_credit"></p>
+  </div>
+</footer><a href="#"
+   class="back-to-top shadow it-docs-back-to-top"
+   data-bs-toggle="backtotop"
+   data-bs-scroll-limit="100"
+   data-bs-position-top="0"
+   aria-label="Back to top">
+  <svg class="icon it-docs-back-to-top-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+  <path fill="currentColor" d="M18.6 10.1 12 3.5l-6.6 6.6.7.7 5.4-5.3V21h1V5.5l5.4 5.3.7-.7z"/>
+</svg>
+</a>
   </body>
 </html>
